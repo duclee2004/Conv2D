@@ -1,6 +1,5 @@
 #ifndef CONVOLVE2D_H
 #define CONVOLVE2D_H
-
 #define ROWS 5
 #define COLS 5
 #define KERNEL_SIZE 3
