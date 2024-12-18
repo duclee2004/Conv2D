@@ -1,0 +1,147 @@
+
+
+================================================================
+== Vivado HLS Report for 'write_output'
+================================================================
+* Date:           Wed Dec 18 10:55:47 2024
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        conv2d_pj
+* Solution:       solution4
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     6.508|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  450|  450|  450|  450|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  |
++-----------------+---------+-------+--------+-------+
+|DSP              |        -|      -|       -|      -|
+|Expression       |        -|      -|       0|      2|
+|FIFO             |        -|      -|       -|      -|
+|Instance         |        -|      -|       -|      -|
+|Memory           |        -|      -|       -|      -|
+|Multiplexer      |        -|      -|       -|   9776|
+|Register         |        -|      -|     452|      -|
++-----------------+---------+-------+--------+-------+
+|Total            |        0|      0|     452|   9778|
++-----------------+---------+-------+--------+-------+
+|Available        |      280|    220|  106400|  53200|
++-----------------+---------+-------+--------+-------+
+|Utilization (%)  |        0|      0|   ~0   |     18|
++-----------------+---------+-------+--------+-------+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+-------+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |ap_block_state1  |    or    |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+    |Total            |          |      0|  0|   2|           1|           1|
+    +-----------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------+------+-----------+-----+-----------+
+    |        Name        |  LUT | Input Size| Bits| Total Bits|
+    +--------------------+------+-----------+-----+-----------+
+    |ap_NS_fsm           |  1953|        452|    1|        452|
+    |ap_done             |     9|          2|    1|          2|
+    |output_r_address0   |  1949|        451|   10|       4510|
+    |output_r_address1   |  1949|        451|   10|       4510|
+    |result_Addr_A_orig  |  1949|        451|   32|      14432|
+    |result_Addr_B_orig  |  1949|        451|   32|      14432|
+    |result_WEN_A        |     9|          2|    4|          8|
+    |result_WEN_B        |     9|          2|    4|          8|
+    +--------------------+------+-----------+-----+-----------+
+    |Total               |  9776|       2262|   94|      38354|
+    +--------------------+------+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+-----+----+-----+-----------+
+    |     Name    |  FF | LUT| Bits| Const Bits|
+    +-------------+-----+----+-----+-----------+
+    |ap_CS_fsm    |  451|   0|  451|          0|
+    |ap_done_reg  |    1|   0|    1|          0|
+    +-------------+-----+----+-----+-----------+
+    |Total        |  452|   0|  452|          0|
+    +-------------+-----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+--------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  | Source Object|    C Type    |
++-------------------+-----+-----+------------+--------------+--------------+
+|ap_clk             |  in |    1| ap_ctrl_hs | write_output | return value |
+|ap_rst             |  in |    1| ap_ctrl_hs | write_output | return value |
+|ap_start           |  in |    1| ap_ctrl_hs | write_output | return value |
+|ap_done            | out |    1| ap_ctrl_hs | write_output | return value |
+|ap_continue        |  in |    1| ap_ctrl_hs | write_output | return value |
+|ap_idle            | out |    1| ap_ctrl_hs | write_output | return value |
+|ap_ready           | out |    1| ap_ctrl_hs | write_output | return value |
+|output_r_address0  | out |   10|  ap_memory |   output_r   |     array    |
+|output_r_ce0       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_q0        |  in |   32|  ap_memory |   output_r   |     array    |
+|output_r_address1  | out |   10|  ap_memory |   output_r   |     array    |
+|output_r_ce1       | out |    1|  ap_memory |   output_r   |     array    |
+|output_r_q1        |  in |   32|  ap_memory |   output_r   |     array    |
+|result_Addr_A      | out |   32|    bram    |    result    |     array    |
+|result_EN_A        | out |    1|    bram    |    result    |     array    |
+|result_WEN_A       | out |    4|    bram    |    result    |     array    |
+|result_Din_A       | out |   32|    bram    |    result    |     array    |
+|result_Dout_A      |  in |   32|    bram    |    result    |     array    |
+|result_Addr_B      | out |   32|    bram    |    result    |     array    |
+|result_EN_B        | out |    1|    bram    |    result    |     array    |
+|result_WEN_B       | out |    4|    bram    |    result    |     array    |
+|result_Din_B       | out |   32|    bram    |    result    |     array    |
+|result_Dout_B      |  in |   32|    bram    |    result    |     array    |
++-------------------+-----+-----+------------+--------------+--------------+
+

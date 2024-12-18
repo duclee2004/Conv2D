@@ -1,0 +1,65 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="convolution_kernel" label="Loop2" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="load_input" label="Inner_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="write_output" label="W_Inner_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="conv2d" label="" functionLabel="">
+            <pragma name="DATAFLOW"/>
+        </directive>
+        <directive functionName="write_output" label="W_Inner_Loop" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="load_input" label="Inner_Loop" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="load_input" label="Outer_Loop" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="write_output" label="W_Outer_Loop" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="conv2d" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="bram" value="" positionalBoolean="mode"/>
+                <option name="port" value="input" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv2d" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="bram" value="" positionalBoolean="mode"/>
+                <option name="port" value="kernel" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="conv2d" label="" functionLabel="">
+            <pragma name="INTERFACE">
+                <option name="bram" value="" positionalBoolean="mode"/>
+                <option name="port" value="result" positionalBoolean="4"/>
+            </pragma>
+        </directive>
+        <directive functionName="convolution_kernel" label="Loop_Row" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="convolution_kernel" label="convolution_kernel_label1" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="convolution_kernel" label="Load_Next_Row" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="convolution_kernel" label="Loop_Col" functionLabel="">
+            <pragma name="PIPELINE"/>
+        </directive>
+        <directive functionName="convolution_kernel" label="Kernel_Row" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="convolution_kernel" label="Kernel_Col" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

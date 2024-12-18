@@ -1,0 +1,378 @@
+
+
+================================================================
+== Vivado HLS Report for 'convolve_2d'
+================================================================
+* Date:           Wed Dec 18 16:55:02 2024
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        conv2Dbuffer
+* Solution:       solution2
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.742|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  269|  269|  269|  269|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                        |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |        Loop Name       | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1                |   18|   18|         9|          -|          -|     2|    no    |
+        | + convolve_2d_label0   |    7|    7|         1|          -|          -|     7|    no    |
+        |- L_convolve_2d_label1  |  248|  248|         9|          5|          1|    49|    yes   |
+        +------------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 5, depth = 9
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 13
+* Pipeline : 1
+  Pipeline-0 : II = 5, D = 9, States = { 4 5 6 7 8 9 10 11 12 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!exitcond1)
+	4  / (exitcond1)
+3 --> 
+	3  / (!exitcond9)
+	2  / (exitcond9)
+4 --> 
+	13  / (exitcond_flatten)
+	5  / (!exitcond_flatten)
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+	4  / true
+13 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%kernel_addr = getelementptr [9 x i32]* %kernel, i64 0, i64 0" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 14 'getelementptr' 'kernel_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%kernel_addr_1 = getelementptr [9 x i32]* %kernel, i64 0, i64 1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 15 'getelementptr' 'kernel_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%kernel_addr_2 = getelementptr [9 x i32]* %kernel, i64 0, i64 2" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 16 'getelementptr' 'kernel_addr_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%kernel_addr_3 = getelementptr [9 x i32]* %kernel, i64 0, i64 3" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 17 'getelementptr' 'kernel_addr_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%kernel_addr_4 = getelementptr [9 x i32]* %kernel, i64 0, i64 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 18 'getelementptr' 'kernel_addr_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%kernel_addr_5 = getelementptr [9 x i32]* %kernel, i64 0, i64 5" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 19 'getelementptr' 'kernel_addr_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%kernel_addr_6 = getelementptr [9 x i32]* %kernel, i64 0, i64 6" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 20 'getelementptr' 'kernel_addr_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%kernel_addr_7 = getelementptr [9 x i32]* %kernel, i64 0, i64 7" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 21 'getelementptr' 'kernel_addr_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%kernel_addr_8 = getelementptr [9 x i32]* %kernel, i64 0, i64 8" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 22 'getelementptr' 'kernel_addr_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecInterface(i32* %in_stream_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 23 'specinterface' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%empty_4 = call i32 (...)* @_ssdm_op_SpecInterface(i32* %out_stream_V, [8 x i8]* @ap_fifo_str, i32 0, i32 0, [1 x i8]* @p_str, i32 0, i32 0, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, i32 2, i32 2, i32 16, i32 16, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 24 'specinterface' 'empty_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %out_stream_V), !map !30"   --->   Operation 25 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %in_stream_V), !map !36"   --->   Operation 26 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap([9 x i32]* %kernel), !map !40"   --->   Operation 27 'specbitsmap' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([12 x i8]* @convolve_2d_str) nounwind"   --->   Operation 28 'spectopmodule' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%line_buf = alloca [14 x i32], align 4" [convolve_2d.cpp:28]   --->   Operation 29 'alloca' 'line_buf' <Predicate = true> <Delay = 0.00> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_1 : Operation 30 [1/1] (1.76ns)   --->   "br label %.loopexit" [convolve_2d.cpp:32]   --->   Operation 30 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 1.93>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%i = phi i2 [ 0, %0 ], [ %i_1, %.loopexit.loopexit ]"   --->   Operation 31 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.95ns)   --->   "%exitcond1 = icmp eq i2 %i, -2" [convolve_2d.cpp:32]   --->   Operation 32 'icmp' 'exitcond1' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 33 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (1.56ns)   --->   "%i_1 = add i2 %i, 1" [convolve_2d.cpp:32]   --->   Operation 34 'add' 'i_1' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader11.preheader, label %.preheader13.preheader" [convolve_2d.cpp:32]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_cast = zext i2 %i to i5" [convolve_2d.cpp:32]   --->   Operation 36 'zext' 'tmp_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_6 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %i, i3 0)" [convolve_2d.cpp:32]   --->   Operation 37 'bitconcatenate' 'tmp_6' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.78ns)   --->   "%tmp_9 = sub i5 %tmp_6, %tmp_cast" [convolve_2d.cpp:34]   --->   Operation 38 'sub' 'tmp_9' <Predicate = (!exitcond1)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (1.76ns)   --->   "br label %.preheader13" [convolve_2d.cpp:33]   --->   Operation 39 'br' <Predicate = (!exitcond1)> <Delay = 1.76>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%window_2_1 = alloca i32"   --->   Operation 40 'alloca' 'window_2_1' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%window_0_0 = alloca i32"   --->   Operation 41 'alloca' 'window_0_0' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%window_0_1 = alloca i32"   --->   Operation 42 'alloca' 'window_0_1' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%window_2_0 = alloca i32"   --->   Operation 43 'alloca' 'window_2_0' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%window_1_0 = alloca i32"   --->   Operation 44 'alloca' 'window_1_0' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%window_1_1 = alloca i32"   --->   Operation 45 'alloca' 'window_1_1' <Predicate = (exitcond1)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (1.76ns)   --->   "br label %.preheader11" [convolve_2d.cpp:36]   --->   Operation 46 'br' <Predicate = (exitcond1)> <Delay = 1.76>
+
+State 3 <SV = 2> <Delay = 4.10>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%j = phi i3 [ %j_1, %1 ], [ 0, %.preheader13.preheader ]"   --->   Operation 47 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (1.13ns)   --->   "%exitcond9 = icmp eq i3 %j, -1" [convolve_2d.cpp:33]   --->   Operation 48 'icmp' 'exitcond9' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7)"   --->   Operation 49 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/1] (1.65ns)   --->   "%j_1 = add i3 %j, 1" [convolve_2d.cpp:33]   --->   Operation 50 'add' 'j_1' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "br i1 %exitcond9, label %.loopexit.loopexit, label %1" [convolve_2d.cpp:33]   --->   Operation 51 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str1) nounwind" [convolve_2d.cpp:34]   --->   Operation 52 'specloopname' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_3_cast = zext i3 %j to i5" [convolve_2d.cpp:34]   --->   Operation 53 'zext' 'tmp_3_cast' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (1.78ns)   --->   "%tmp_2 = add i5 %tmp_9, %tmp_3_cast" [convolve_2d.cpp:34]   --->   Operation 54 'add' 'tmp_2' <Predicate = (!exitcond9)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_11_cast = sext i5 %tmp_2 to i64" [convolve_2d.cpp:34]   --->   Operation 55 'sext' 'tmp_11_cast' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%line_buf_addr = getelementptr [14 x i32]* %line_buf, i64 0, i64 %tmp_11_cast" [convolve_2d.cpp:34]   --->   Operation 56 'getelementptr' 'line_buf_addr' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (2.32ns)   --->   "store i32 0, i32* %line_buf_addr, align 4" [convolve_2d.cpp:34]   --->   Operation 57 'store' <Predicate = (!exitcond9)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "br label %.preheader13" [convolve_2d.cpp:33]   --->   Operation 58 'br' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 59 'br' <Predicate = (exitcond9)> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 6.19>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i6 [ %indvar_flatten_next, %._crit_edge15 ], [ 0, %.preheader11.preheader ]"   --->   Operation 60 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%y_assign = phi i3 [ %y_assign_mid2, %._crit_edge15 ], [ 0, %.preheader11.preheader ]" [convolve_2d.cpp:37]   --->   Operation 61 'phi' 'y_assign' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%x_assign = phi i3 [ %x, %._crit_edge15 ], [ 0, %.preheader11.preheader ]"   --->   Operation 62 'phi' 'x_assign' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%window_2_1_load = load i32* %window_2_1"   --->   Operation 63 'load' 'window_2_1_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%window_0_0_load = load i32* %window_0_0" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 64 'load' 'window_0_0_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%window_0_1_load_1 = load i32* %window_0_1"   --->   Operation 65 'load' 'window_0_1_load_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 66 [1/1] (0.00ns)   --->   "%window_2_0_load = load i32* %window_2_0" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 66 'load' 'window_2_0_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 67 [1/1] (0.00ns)   --->   "%window_1_0_load = load i32* %window_1_0" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 67 'load' 'window_1_0_load' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 68 [1/1] (0.00ns)   --->   "%window_1_1_load_1 = load i32* %window_1_1"   --->   Operation 68 'load' 'window_1_1_load_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 69 [1/1] (1.42ns)   --->   "%exitcond_flatten = icmp eq i6 %indvar_flatten, -15"   --->   Operation 69 'icmp' 'exitcond_flatten' <Predicate = true> <Delay = 1.42> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 70 [1/1] (0.00ns)   --->   "%empty_7 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 49, i64 49, i64 49)"   --->   Operation 70 'speclooptripcount' 'empty_7' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 71 [1/1] (1.82ns)   --->   "%indvar_flatten_next = add i6 %indvar_flatten, 1"   --->   Operation 71 'add' 'indvar_flatten_next' <Predicate = true> <Delay = 1.82> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 72 [1/1] (0.00ns)   --->   "store i32 %window_1_1_load_1, i32* %window_1_0"   --->   Operation 72 'store' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 73 [1/1] (0.00ns)   --->   "store i32 %window_2_1_load, i32* %window_2_0"   --->   Operation 73 'store' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 74 [1/1] (0.00ns)   --->   "store i32 %window_0_1_load_1, i32* %window_0_0"   --->   Operation 74 'store' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %3, label %.preheader12"   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 76 [1/1] (1.65ns)   --->   "%y = add i3 %y_assign, 1" [convolve_2d.cpp:36]   --->   Operation 76 'add' 'y' <Predicate = (!exitcond_flatten)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 77 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %x_assign, -1" [convolve_2d.cpp:37]   --->   Operation 77 'icmp' 'exitcond' <Predicate = (!exitcond_flatten)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 78 [1/1] (0.98ns)   --->   "%x_assign_mid2 = select i1 %exitcond, i3 0, i3 %x_assign" [convolve_2d.cpp:37]   --->   Operation 78 'select' 'x_assign_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.98> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 79 [1/1] (1.13ns)   --->   "%tmp_1_mid1 = icmp ne i3 %y, 0" [convolve_2d.cpp:54]   --->   Operation 79 'icmp' 'tmp_1_mid1' <Predicate = (!exitcond_flatten)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 80 [1/1] (1.13ns)   --->   "%tmp_s = icmp ne i3 %y_assign, 0" [convolve_2d.cpp:54]   --->   Operation 80 'icmp' 'tmp_s' <Predicate = (!exitcond_flatten)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 81 [1/1] (0.00ns) (grouped into LUT with out node or_cond)   --->   "%tmp_1_mid2 = select i1 %exitcond, i1 %tmp_1_mid1, i1 %tmp_s" [convolve_2d.cpp:54]   --->   Operation 81 'select' 'tmp_1_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 82 [1/1] (0.98ns)   --->   "%y_assign_mid2 = select i1 %exitcond, i3 %y, i3 %y_assign" [convolve_2d.cpp:37]   --->   Operation 82 'select' 'y_assign_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.98> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_4 : Operation 83 [1/1] (0.00ns)   --->   "%tmp_8 = zext i3 %x_assign_mid2 to i64" [convolve_2d.cpp:47]   --->   Operation 83 'zext' 'tmp_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 84 [1/1] (0.00ns)   --->   "%tmp_8_cast = zext i3 %x_assign_mid2 to i4" [convolve_2d.cpp:47]   --->   Operation 84 'zext' 'tmp_8_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 85 [1/1] (0.00ns)   --->   "%line_buf_addr_1 = getelementptr [14 x i32]* %line_buf, i64 0, i64 %tmp_8" [convolve_2d.cpp:47]   --->   Operation 85 'getelementptr' 'line_buf_addr_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 86 [1/1] (1.73ns)   --->   "%tmp_1 = add i4 %tmp_8_cast, 7" [convolve_2d.cpp:47]   --->   Operation 86 'add' 'tmp_1' <Predicate = (!exitcond_flatten)> <Delay = 1.73> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 87 [1/1] (0.00ns)   --->   "%tmp_10_cast = zext i4 %tmp_1 to i64" [convolve_2d.cpp:47]   --->   Operation 87 'zext' 'tmp_10_cast' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%line_buf_addr_2 = getelementptr [14 x i32]* %line_buf, i64 0, i64 %tmp_10_cast" [convolve_2d.cpp:47]   --->   Operation 88 'getelementptr' 'line_buf_addr_2' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 89 [2/2] (2.32ns)   --->   "%window_0_2 = load i32* %line_buf_addr_1, align 4" [convolve_2d.cpp:47]   --->   Operation 89 'load' 'window_0_2' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_4 : Operation 90 [2/2] (2.32ns)   --->   "%window_1_2 = load i32* %line_buf_addr_2, align 4" [convolve_2d.cpp:47]   --->   Operation 90 'load' 'window_1_2' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_4 : Operation 91 [1/1] (1.13ns)   --->   "%tmp_7 = icmp ne i3 %x_assign_mid2, 0" [convolve_2d.cpp:54]   --->   Operation 91 'icmp' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 92 [1/1] (0.99ns) (out node of the LUT)   --->   "%or_cond = and i1 %tmp_1_mid2, %tmp_7" [convolve_2d.cpp:54]   --->   Operation 92 'and' 'or_cond' <Predicate = (!exitcond_flatten)> <Delay = 0.99> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 93 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %2, label %._crit_edge15" [convolve_2d.cpp:54]   --->   Operation 93 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 94 [2/2] (2.32ns)   --->   "%kernel_load = load i32* %kernel_addr, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 94 'load' 'kernel_load' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_4 : Operation 95 [2/2] (2.32ns)   --->   "%kernel_load_1 = load i32* %kernel_addr_1, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 95 'load' 'kernel_load_1' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+
+State 5 <SV = 3> <Delay = 5.95>
+ST_5 : Operation 96 [1/1] (3.63ns)   --->   "%tmp = call i32 @_ssdm_op_Read.ap_fifo.volatile.i32P(i32* %in_stream_V)" [convolve_2d.cpp:40]   --->   Operation 96 'read' 'tmp' <Predicate = (!exitcond_flatten)> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_5 : Operation 97 [1/2] (2.32ns)   --->   "%window_0_2 = load i32* %line_buf_addr_1, align 4" [convolve_2d.cpp:47]   --->   Operation 97 'load' 'window_0_2' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 98 [1/2] (2.32ns)   --->   "%window_1_2 = load i32* %line_buf_addr_2, align 4" [convolve_2d.cpp:47]   --->   Operation 98 'load' 'window_1_2' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 99 [1/1] (2.32ns)   --->   "store i32 %window_1_2, i32* %line_buf_addr_1, align 4" [convolve_2d.cpp:52]   --->   Operation 99 'store' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 100 [1/1] (2.32ns)   --->   "store i32 %tmp, i32* %line_buf_addr_2, align 4" [convolve_2d.cpp:52]   --->   Operation 100 'store' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 101 [1/2] (2.32ns)   --->   "%kernel_load = load i32* %kernel_addr, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 101 'load' 'kernel_load' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 102 [1/2] (2.32ns)   --->   "%kernel_load_1 = load i32* %kernel_addr_1, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 102 'load' 'kernel_load_1' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 103 [2/2] (2.32ns)   --->   "%kernel_load_2 = load i32* %kernel_addr_2, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 103 'load' 'kernel_load_2' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_5 : Operation 104 [2/2] (2.32ns)   --->   "%kernel_load_3 = load i32* %kernel_addr_3, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 104 'load' 'kernel_load_3' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+
+State 6 <SV = 4> <Delay = 8.51>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "%window_0_1_load = load i32* %window_0_1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 105 'load' 'window_0_1_load' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "store i32 %window_0_2, i32* %window_0_1" [convolve_2d.cpp:47]   --->   Operation 106 'store' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (8.51ns)   --->   "%tmp_17_0_i = mul nsw i32 %kernel_load, %window_0_0_load" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 107 'mul' 'tmp_17_0_i' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 108 [1/1] (8.51ns)   --->   "%tmp_17_0_1_i = mul nsw i32 %kernel_load_1, %window_0_1_load" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 108 'mul' 'tmp_17_0_1_i' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 109 [1/2] (2.32ns)   --->   "%kernel_load_2 = load i32* %kernel_addr_2, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 109 'load' 'kernel_load_2' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_6 : Operation 110 [1/2] (2.32ns)   --->   "%kernel_load_3 = load i32* %kernel_addr_3, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 110 'load' 'kernel_load_3' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_6 : Operation 111 [2/2] (2.32ns)   --->   "%kernel_load_4 = load i32* %kernel_addr_4, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 111 'load' 'kernel_load_4' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_6 : Operation 112 [2/2] (2.32ns)   --->   "%kernel_load_5 = load i32* %kernel_addr_5, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 112 'load' 'kernel_load_5' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+
+State 7 <SV = 5> <Delay = 8.51>
+ST_7 : Operation 113 [1/1] (8.51ns)   --->   "%tmp_17_0_2_i = mul nsw i32 %kernel_load_2, %window_0_2" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 113 'mul' 'tmp_17_0_2_i' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 114 [1/1] (8.51ns)   --->   "%tmp_17_1_i = mul nsw i32 %kernel_load_3, %window_1_0_load" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 114 'mul' 'tmp_17_1_i' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 115 [1/2] (2.32ns)   --->   "%kernel_load_4 = load i32* %kernel_addr_4, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 115 'load' 'kernel_load_4' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_7 : Operation 116 [1/2] (2.32ns)   --->   "%kernel_load_5 = load i32* %kernel_addr_5, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 116 'load' 'kernel_load_5' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_7 : Operation 117 [2/2] (2.32ns)   --->   "%kernel_load_6 = load i32* %kernel_addr_6, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 117 'load' 'kernel_load_6' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_7 : Operation 118 [2/2] (2.32ns)   --->   "%kernel_load_7 = load i32* %kernel_addr_7, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 118 'load' 'kernel_load_7' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_7 : Operation 119 [1/1] (2.55ns)   --->   "%tmp2 = add i32 %tmp_17_0_i, %tmp_17_0_1_i" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 119 'add' 'tmp2' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 8 <SV = 6> <Delay = 8.51>
+ST_8 : Operation 120 [1/1] (0.00ns)   --->   "%window_2_1_load_1 = load i32* %window_2_1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 120 'load' 'window_2_1_load_1' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 121 [1/1] (0.00ns)   --->   "%window_1_1_load = load i32* %window_1_1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 121 'load' 'window_1_1_load' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 122 [1/1] (0.00ns)   --->   "store i32 %window_1_2, i32* %window_1_1" [convolve_2d.cpp:47]   --->   Operation 122 'store' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 123 [1/1] (0.00ns)   --->   "store i32 %tmp, i32* %window_2_1" [convolve_2d.cpp:40]   --->   Operation 123 'store' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_8 : Operation 124 [1/1] (8.51ns)   --->   "%tmp_17_1_1_i = mul nsw i32 %kernel_load_4, %window_1_1_load" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 124 'mul' 'tmp_17_1_1_i' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 125 [1/1] (8.51ns)   --->   "%tmp_17_1_2_i = mul nsw i32 %kernel_load_5, %window_1_2" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 125 'mul' 'tmp_17_1_2_i' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 126 [1/2] (2.32ns)   --->   "%kernel_load_6 = load i32* %kernel_addr_6, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 126 'load' 'kernel_load_6' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_8 : Operation 127 [1/2] (2.32ns)   --->   "%kernel_load_7 = load i32* %kernel_addr_7, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 127 'load' 'kernel_load_7' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_8 : Operation 128 [2/2] (2.32ns)   --->   "%kernel_load_8 = load i32* %kernel_addr_8, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 128 'load' 'kernel_load_8' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+ST_8 : Operation 129 [1/1] (2.55ns)   --->   "%tmp3 = add i32 %tmp_17_0_2_i, %tmp_17_1_i" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 129 'add' 'tmp3' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.55> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 130 [1/1] (1.65ns)   --->   "%x = add i3 %x_assign_mid2, 1" [convolve_2d.cpp:37]   --->   Operation 130 'add' 'x' <Predicate = (!exitcond_flatten)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+State 9 <SV = 7> <Delay = 8.51>
+ST_9 : Operation 131 [1/1] (8.51ns)   --->   "%tmp_17_2_i = mul nsw i32 %kernel_load_6, %window_2_0_load" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 131 'mul' 'tmp_17_2_i' <Predicate = (or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 132 [1/1] (8.51ns)   --->   "%tmp_17_2_1_i = mul nsw i32 %kernel_load_7, %window_2_1_load_1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 132 'mul' 'tmp_17_2_1_i' <Predicate = (or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 133 [1/2] (2.32ns)   --->   "%kernel_load_8 = load i32* %kernel_addr_8, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 133 'load' 'kernel_load_8' <Predicate = (or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
+
+State 10 <SV = 8> <Delay = 8.51>
+ST_10 : Operation 134 [1/1] (8.51ns)   --->   "%tmp_17_2_2_i = mul nsw i32 %kernel_load_8, %tmp" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 134 'mul' 'tmp_17_2_2_i' <Predicate = (or_cond)> <Delay = 8.51> <Core = "Mul">   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 8.51> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 11 <SV = 9> <Delay = 8.74>
+ST_11 : Operation 135 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp5 = add i32 %tmp_17_1_1_i, %tmp_17_1_2_i" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 135 'add' 'tmp5' <Predicate = (or_cond)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 136 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp7 = add i32 %tmp_17_2_1_i, %tmp_17_2_2_i" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 136 'add' 'tmp7' <Predicate = (or_cond)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 137 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp6 = add i32 %tmp7, %tmp_17_2_i" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 137 'add' 'tmp6' <Predicate = (or_cond)> <Delay = 4.37> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_11 : Operation 138 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp4 = add i32 %tmp6, %tmp5" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 138 'add' 'tmp4' <Predicate = (or_cond)> <Delay = 4.37> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 12 <SV = 10> <Delay = 8.00>
+ST_12 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([21 x i8]* @L_convolve_2d_label1)"   --->   Operation 139 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str2) nounwind" [convolve_2d.cpp:37]   --->   Operation 140 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 141 [1/1] (0.00ns)   --->   "%tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([19 x i8]* @p_str2)" [convolve_2d.cpp:37]   --->   Operation 141 'specregionbegin' 'tmp_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 142 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str3) nounwind" [convolve_2d.cpp:38]   --->   Operation 142 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 143 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp1 = add i32 %tmp3, %tmp2" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 143 'add' 'tmp1' <Predicate = (or_cond)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_12 : Operation 144 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%result = add nsw i32 %tmp4, %tmp1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 144 'add' 'result' <Predicate = (or_cond)> <Delay = 4.37> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_12 : Operation 145 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %out_stream_V, i32 %result)" [convolve_2d.cpp:56]   --->   Operation 145 'write' <Predicate = (or_cond)> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
+ST_12 : Operation 146 [1/1] (0.00ns)   --->   "br label %._crit_edge15" [convolve_2d.cpp:57]   --->   Operation 146 'br' <Predicate = (or_cond)> <Delay = 0.00>
+ST_12 : Operation 147 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([19 x i8]* @p_str2, i32 %tmp_4)" [convolve_2d.cpp:58]   --->   Operation 147 'specregionend' 'empty_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 148 [1/1] (0.00ns)   --->   "br label %.preheader11" [convolve_2d.cpp:37]   --->   Operation 148 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+
+State 13 <SV = 3> <Delay = 0.00>
+ST_13 : Operation 149 [1/1] (0.00ns)   --->   "ret void" [convolve_2d.cpp:60]   --->   Operation 149 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', convolve_2d.cpp:32) [22]  (1.77 ns)
+
+ <State 2>: 1.94ns
+The critical path consists of the following:
+	'icmp' operation ('exitcond1', convolve_2d.cpp:32) [23]  (0.959 ns)
+	blocking operation 0.978 ns on control path)
+
+ <State 3>: 4.1ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', convolve_2d.cpp:33) [33]  (0 ns)
+	'add' operation ('tmp_2', convolve_2d.cpp:34) [41]  (1.78 ns)
+	'getelementptr' operation ('line_buf_addr', convolve_2d.cpp:34) [43]  (0 ns)
+	'store' operation (convolve_2d.cpp:34) of constant 0 on array 'line_buf', convolve_2d.cpp:28 [44]  (2.32 ns)
+
+ <State 4>: 6.19ns
+The critical path consists of the following:
+	'phi' operation ('x') with incoming values : ('x', convolve_2d.cpp:37) [59]  (0 ns)
+	'icmp' operation ('exitcond', convolve_2d.cpp:37) [79]  (1.13 ns)
+	'select' operation ('x_assign_mid2', convolve_2d.cpp:37) [80]  (0.98 ns)
+	'add' operation ('tmp_1', convolve_2d.cpp:47) [92]  (1.74 ns)
+	'getelementptr' operation ('line_buf_addr_2', convolve_2d.cpp:47) [94]  (0 ns)
+	'load' operation ('window[1][2]', convolve_2d.cpp:47) on array 'line_buf', convolve_2d.cpp:28 [96]  (2.32 ns)
+	blocking operation 0.0225 ns on control path)
+
+ <State 5>: 5.96ns
+The critical path consists of the following:
+	fifo read on port 'in_stream_V' (convolve_2d.cpp:40) [88]  (3.63 ns)
+	'store' operation (convolve_2d.cpp:52) of variable 'tmp', convolve_2d.cpp:40 on array 'line_buf', convolve_2d.cpp:28 [98]  (2.32 ns)
+
+ <State 6>: 8.51ns
+The critical path consists of the following:
+	'load' operation ('window_0_1_load', convolve_2d.cpp:17->convolve_2d.cpp:55) on local variable 'window[0][1]' [75]  (0 ns)
+	'mul' operation ('tmp_17_0_1_i', convolve_2d.cpp:17->convolve_2d.cpp:55) [109]  (8.51 ns)
+
+ <State 7>: 8.51ns
+The critical path consists of the following:
+	'mul' operation ('tmp_17_0_2_i', convolve_2d.cpp:17->convolve_2d.cpp:55) [111]  (8.51 ns)
+
+ <State 8>: 8.51ns
+The critical path consists of the following:
+	'load' operation ('window_1_1_load', convolve_2d.cpp:17->convolve_2d.cpp:55) on local variable 'window[1][1]' [76]  (0 ns)
+	'mul' operation ('tmp_17_1_1_i', convolve_2d.cpp:17->convolve_2d.cpp:55) [115]  (8.51 ns)
+
+ <State 9>: 8.51ns
+The critical path consists of the following:
+	'mul' operation ('tmp_17_2_i', convolve_2d.cpp:17->convolve_2d.cpp:55) [119]  (8.51 ns)
+
+ <State 10>: 8.51ns
+The critical path consists of the following:
+	'mul' operation ('tmp_17_2_2_i', convolve_2d.cpp:17->convolve_2d.cpp:55) [123]  (8.51 ns)
+
+ <State 11>: 8.74ns
+The critical path consists of the following:
+	'add' operation ('tmp7', convolve_2d.cpp:17->convolve_2d.cpp:55) [128]  (0 ns)
+	'add' operation ('tmp6', convolve_2d.cpp:17->convolve_2d.cpp:55) [129]  (4.37 ns)
+	'add' operation ('tmp4', convolve_2d.cpp:17->convolve_2d.cpp:55) [130]  (4.37 ns)
+
+ <State 12>: 8.01ns
+The critical path consists of the following:
+	'add' operation ('tmp1', convolve_2d.cpp:17->convolve_2d.cpp:55) [126]  (0 ns)
+	'add' operation ('result', convolve_2d.cpp:17->convolve_2d.cpp:55) [131]  (4.37 ns)
+	fifo write on port 'out_stream_V' (convolve_2d.cpp:56) [132]  (3.63 ns)
+
+ <State 13>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

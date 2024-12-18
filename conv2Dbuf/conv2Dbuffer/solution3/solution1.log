@@ -1,0 +1,713 @@
+==============================================================
+File generated on Wed Dec 18 16:07:27 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+ERROR: [HLS 200-70] Compilation errors found: In file included from convolve_2d.cpp:1:
+convolve_2d.cpp:73:30: error: no matching function for call to 'convolve'
+                int result = convolve(window, kernel);
+                             ^~~~~~~~
+convolve_2d.cpp:15:5: note: candidate function not viable: 2nd argument ('const int (*)[3]') would lose const qualifier
+int convolve(int window[3][3], int kernel[3][3])
+    ^
+1 error generated.
+==============================================================
+File generated on Wed Dec 18 16:08:48 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 102.926 ; gain = 17.969
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 102.926 ; gain = 17.969
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.383 ; gain = 19.426
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:54) automatically.
+ERROR: [SYNCHK 200-41] convolve_2d.cpp:29: unsupported pointer reinterpretation from type '[9 x i32]*' to type '[3 x i32]*' on variable 'kernel'.
+ERROR: [SYNCHK 200-71] convolve_2d.cpp:71: function 'convolve(int (*) [3], int const (*) [3])' has no function body.
+INFO: [SYNCHK 200-10] 2 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+File generated on Wed Dec 18 16:09:15 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.969 ; gain = 18.289
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.969 ; gain = 18.289
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.684 ; gain = 20.004
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:54) automatically.
+ERROR: [SYNCHK 200-41] convolve_2d.cpp:29: unsupported pointer reinterpretation from type '[9 x i32]*' to type '[3 x i32]*' on variable 'kernel'.
+ERROR: [SYNCHK 200-71] convolve_2d.cpp:71: function 'convolve(int (*) [3], int const (*) [3])' has no function body.
+INFO: [SYNCHK 200-10] 2 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+File generated on Wed Dec 18 16:10:30 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.758 ; gain = 18.172
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.758 ; gain = 18.172
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.543 ; gain = 19.957
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:54) automatically.
+ERROR: [SYNCHK 200-41] convolve_2d.cpp:29: unsupported pointer reinterpretation from type '[9 x i32]*' to type '[3 x i32]*' on variable 'kernel'.
+ERROR: [SYNCHK 200-71] convolve_2d.cpp:71: function 'convolve(int (*) [3], int const (*) [3])' has no function body.
+INFO: [SYNCHK 200-10] 2 error(s), 0 warning(s).
+ERROR: [HLS 200-70] Synthesizability check failed.
+==============================================================
+File generated on Wed Dec 18 16:13:12 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.910 ; gain = 18.012
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.910 ; gain = 18.012
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.891 ; gain = 19.992
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:53) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.145 ; gain = 20.246
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2.1' (convolve_2d.cpp:50) in function 'convolve_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:14).
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1' (convolve_2d.cpp:57) in function 'convolve_2d' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:58) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:61) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:67) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:17) in function 'convolve' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'line_buf' (convolve_2d.cpp:35) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:36) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:36) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:53) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolve' (convolve_2d.cpp:14)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 126.289 ; gain = 41.391
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (convolve_2d.cpp:43:16) in function 'convolve_2d'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:49:19) in function 'convolve_2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 127.363 ; gain = 42.465
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve_2d' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'convolve'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_8', convolve_2d.cpp:18) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.698 seconds; current allocated memory: 87.634 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.161 seconds; current allocated memory: 87.831 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.301 seconds; current allocated memory: 88.127 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.145 seconds; current allocated memory: 88.496 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 89.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/out_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/in_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_0' to 'convolve_2d_line_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_1' to 'convolve_2d_line_cud' due to the length limit 20
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.489 seconds; current allocated memory: 90.094 MB.
+INFO: [RTMG 210-278] Implementing memory 'convolve_2d_line_bkb_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 141.551 ; gain = 56.652
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
+INFO: [HLS 200-112] Total elapsed time: 8.66 seconds; peak allocated memory: 90.094 MB.
+==============================================================
+File generated on Wed Dec 18 16:14:31 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.820 ; gain = 17.730
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.820 ; gain = 17.730
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.871 ; gain = 19.781
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:49) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.125 ; gain = 20.035
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop-2.1' (convolve_2d.cpp:46) in function 'convolve_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:13).
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1' (convolve_2d.cpp:52) in function 'convolve_2d' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:53) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:56) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:61) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (convolve_2d.cpp:15) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'line_buf' (convolve_2d.cpp:33) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:34) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:34) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:49) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolve' (convolve_2d.cpp:13)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 125.934 ; gain = 40.844
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (convolve_2d.cpp:40:16) in function 'convolve_2d'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:45:19) in function 'convolve_2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 127.781 ; gain = 42.691
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve_2d' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'convolve'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_8', convolve_2d.cpp:17) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.574 seconds; current allocated memory: 87.650 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.157 seconds; current allocated memory: 87.863 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.25 seconds; current allocated memory: 88.142 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.135 seconds; current allocated memory: 88.511 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.233 seconds; current allocated memory: 89.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/out_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/in_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return' to AXI-Lite port AXILiteS.
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_0' to 'convolve_2d_line_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_1' to 'convolve_2d_line_cud' due to the length limit 20
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.482 seconds; current allocated memory: 90.109 MB.
+INFO: [RTMG 210-278] Implementing memory 'convolve_2d_line_bkb_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 141.273 ; gain = 56.184
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
+INFO: [HLS 200-112] Total elapsed time: 8.399 seconds; peak allocated memory: 90.109 MB.
+==============================================================
+File generated on Wed Dec 18 16:14:45 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
+INFO: [COSIM 212-302] Starting C TB testing ... 
+INFO: [COSIM 212-333] Generating C post check test bench ...
+INFO: [COSIM 212-12] Generating RTL test bench ...
+INFO: [COSIM 212-323] Starting verilog simulation. 
+INFO: [COSIM 212-15] Starting XSIM ...
+INFO: [COSIM 212-316] Starting C post checking ...
+INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
+INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
+==============================================================
+File generated on Wed Dec 18 16:23:18 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 103.402 ; gain = 18.285
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 103.402 ; gain = 18.285
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 104.801 ; gain = 19.684
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 105.355 ; gain = 20.238
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'convolve_2d_label1' (convolve_2d.cpp:37) in function 'convolve_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:13).
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1' (convolve_2d.cpp:42) in function 'convolve_2d' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:46) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:51) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (convolve_2d.cpp:15) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'line_buf' (convolve_2d.cpp:28) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolve' (convolve_2d.cpp:13)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 126.297 ; gain = 41.180
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (convolve_2d.cpp:32:19) in function 'convolve_2d'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:36:19) in function 'convolve_2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 127.840 ; gain = 42.723
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve_2d' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'convolve'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_8', convolve_2d.cpp:17) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.519 seconds; current allocated memory: 87.836 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.153 seconds; current allocated memory: 88.085 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.278 seconds; current allocated memory: 88.330 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.143 seconds; current allocated memory: 88.736 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.245 seconds; current allocated memory: 89.244 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/out_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/in_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_0' to 'convolve_2d_line_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_1' to 'convolve_2d_line_cud' due to the length limit 20
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.44 seconds; current allocated memory: 90.198 MB.
+INFO: [RTMG 210-278] Implementing memory 'convolve_2d_line_bkb_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:00 ; elapsed = 00:00:09 . Memory (MB): peak = 141.289 ; gain = 56.172
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
+INFO: [HLS 200-112] Total elapsed time: 9.051 seconds; peak allocated memory: 90.198 MB.
+==============================================================
+File generated on Wed Dec 18 16:27:26 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 103.125 ; gain = 18.438
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 103.125 ; gain = 18.438
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.195 ; gain = 20.508
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.465 ; gain = 20.777
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'convolve_2d_label1' (convolve_2d.cpp:37) in function 'convolve_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:13).
+INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label2' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:46) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:51) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1' (convolve_2d.cpp:15) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'line_buf' (convolve_2d.cpp:28) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolve' (convolve_2d.cpp:13)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 126.105 ; gain = 41.418
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (convolve_2d.cpp:32:19) in function 'convolve_2d'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:36:19) in function 'convolve_2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 127.895 ; gain = 43.207
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve_2d' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'convolve'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_8', convolve_2d.cpp:17) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.11 seconds; current allocated memory: 87.855 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.137 seconds; current allocated memory: 88.089 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.277 seconds; current allocated memory: 88.366 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.129 seconds; current allocated memory: 88.771 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.243 seconds; current allocated memory: 89.264 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/out_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/in_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_0' to 'convolve_2d_line_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_1' to 'convolve_2d_line_cud' due to the length limit 20
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.446 seconds; current allocated memory: 90.280 MB.
+INFO: [RTMG 210-278] Implementing memory 'convolve_2d_line_bkb_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 140.750 ; gain = 56.062
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
+INFO: [HLS 200-112] Total elapsed time: 8.612 seconds; peak allocated memory: 90.280 MB.
+==============================================================
+File generated on Wed Dec 18 16:28:15 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 103.410 ; gain = 18.703
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 103.410 ; gain = 18.703
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.996 ; gain = 20.289
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.383 ; gain = 20.676
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'convolve_2d_label1' (convolve_2d.cpp:37) in function 'convolve_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:13).
+INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label2' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:46) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:51) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'convolve_label3' (convolve_2d.cpp:15) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'line_buf' (convolve_2d.cpp:28) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolve' (convolve_2d.cpp:13)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 126.246 ; gain = 41.539
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (convolve_2d.cpp:32:19) in function 'convolve_2d'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:36:19) in function 'convolve_2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:06 . Memory (MB): peak = 127.750 ; gain = 43.043
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve_2d' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'convolve'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_8', convolve_2d.cpp:17) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.058 seconds; current allocated memory: 87.897 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.164 seconds; current allocated memory: 88.150 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.279 seconds; current allocated memory: 88.411 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.122 seconds; current allocated memory: 88.816 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.225 seconds; current allocated memory: 89.309 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/out_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/in_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 'ap_ctrl_hs'.
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_0' to 'convolve_2d_line_bkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf_1' to 'convolve_2d_line_cud' due to the length limit 20
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve_2d/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.444 seconds; current allocated memory: 90.326 MB.
+INFO: [RTMG 210-278] Implementing memory 'convolve_2d_line_bkb_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 140.684 ; gain = 55.977
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
+INFO: [HLS 200-112] Total elapsed time: 8.585 seconds; peak allocated memory: 90.326 MB.
+==============================================================
+File generated on Wed Dec 18 16:28:56 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'convolve_2d.cpp' ... 
+WARNING: [HLS 214-114] Only function calls and local variable declarations are allowed in a dataflow region: convolve_2d.cpp:32:5
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file convolve_2d.cpp
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.316 ; gain = 19.504
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.316 ; gain = 19.504
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.496 ; gain = 20.684
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.816 ; gain = 21.004
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'convolve_2d_label1' (convolve_2d.cpp:37) in function 'convolve_2d' for pipelining.
+INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:13).
+INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label2' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:46) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:51) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'convolve_label3' (convolve_2d.cpp:15) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [XFORM 203-101] Partitioning array 'line_buf' (convolve_2d.cpp:28) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'window' (convolve_2d.cpp:29) in dimension 2 completely.
+INFO: [XFORM 203-712] Applying dataflow to function 'convolve_2d', detected/extracted 1 process function(s): 
+	 'Loop_1_proc10'.
+INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'Loop_1_proc10' (convolve_2d.cpp:39) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolve' (convolve_2d.cpp:13)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 126.848 ; gain = 42.035
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (convolve_2d.cpp:32:19) in function 'Loop_1_proc10'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:36:19) in function 'Loop_1_proc10'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 137.613 ; gain = 52.801
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'convolve_2d' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'convolve'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_8', convolve_2d.cpp:17) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 8.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 6.138 seconds; current allocated memory: 97.631 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.166 seconds; current allocated memory: 97.868 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Loop_1_proc10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label0'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 1.
+INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 11.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.282 seconds; current allocated memory: 98.125 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.141 seconds; current allocated memory: 98.526 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.168 seconds; current allocated memory: 98.595 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.134 seconds; current allocated memory: 98.692 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'convolve/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve'.
+INFO: [HLS 200-111]  Elapsed time: 0.243 seconds; current allocated memory: 99.133 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Loop_1_proc10' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'Loop_1_proc10_line_buf_0' to 'Loop_1_proc10_linbkb' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'Loop_1_proc10_line_buf_1' to 'Loop_1_proc10_lincud' due to the length limit 20
+WARNING: [RTGEN 206-101] Setting dangling out port 'Loop_1_proc10/kernel_WEN_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'Loop_1_proc10/kernel_Din_A' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'Loop_1_proc10/kernel_WEN_B' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'Loop_1_proc10/kernel_Din_B' to 0.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Loop_1_proc10'.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 100.180 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolve_2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/out_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/in_stream_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'bram'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.36 seconds; current allocated memory: 100.468 MB.
+INFO: [RTMG 210-278] Implementing memory 'Loop_1_proc10_linbkb_ram (RAM)' using distributed RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:09 . Memory (MB): peak = 150.609 ; gain = 65.797
+INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
+INFO: [HLS 200-112] Total elapsed time: 9.229 seconds; peak allocated memory: 100.468 MB.

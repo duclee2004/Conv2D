@@ -1,7 +1,7 @@
 #ifndef CONVOLUTION2D_H
 #define CONVOLUTION2D_H
 
-// Định nghĩa kích thước cho ma trận và kernel
+// �?ịnh nghĩa kích thước cho ma trận và kernel
 #define IMG_SIZE 6       // Kích thước ma trận đầu vào (6x6)
 #define KERNEL_SIZE 3    // Kích thước kernel (3x3)
 #define OUT_SIZE (IMG_SIZE - KERNEL_SIZE + 1) // Kích thước ma trận kết quả

@@ -1,0 +1,248 @@
+==============================================================
+File generated on Wed Dec 18 02:00:20 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv2D.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 102.809 ; gain = 17.949
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 102.809 ; gain = 17.949
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 104.289 ; gain = 19.430
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'load_input' into 'conv2d' (conv2D.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'write_output' into 'conv2d' (conv2D.cpp:49) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 104.547 ; gain = 19.688
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop2' (conv2D.cpp:19) in function 'convolution_kernel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (conv2D.cpp:22) in function 'convolution_kernel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (conv2D.cpp:23) in function 'convolution_kernel' completely with a factor of 3.
+INFO: [XFORM 203-602] Inlining function 'load_input' into 'conv2d' (conv2D.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'write_output' into 'conv2d' (conv2D.cpp:49) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolution_kernel' (conv2D.cpp:15)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 126.961 ; gain = 42.102
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv2D.cpp:18:19) in function 'convolution_kernel'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 127.262 ; gain = 42.402
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv2d' ...
+WARNING: [SYN 201-107] Renaming port name 'conv2d/input' to 'conv2d/input_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolution_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_Loop2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('buffer_load_2', conv2D.cpp:24) on array 'buffer_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buffer_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.312 seconds; current allocated memory: 87.581 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.168 seconds; current allocated memory: 88.011 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.167 seconds; current allocated memory: 88.173 MB.
+INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.146 seconds; current allocated memory: 88.350 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolution_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolution_kernel'.
+INFO: [HLS 200-111]  Elapsed time: 0.129 seconds; current allocated memory: 89.054 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/result' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv2d' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.337 seconds; current allocated memory: 89.601 MB.
+INFO: [RTMG 210-278] Implementing memory 'conv2d_buffer_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'conv2d_output_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 140.086 ; gain = 55.227
+INFO: [SYSC 207-301] Generating SystemC RTL for conv2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for conv2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv2d.
+INFO: [HLS 200-112] Total elapsed time: 7.437 seconds; peak allocated memory: 89.601 MB.
+==============================================================
+File generated on Wed Dec 18 02:02:12 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv2D.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.660 ; gain = 17.762
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.660 ; gain = 17.762
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.223 ; gain = 19.324
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'load_input' into 'conv2d' (conv2D.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'write_output' into 'conv2d' (conv2D.cpp:49) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.477 ; gain = 19.578
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop2' (conv2D.cpp:19) in function 'convolution_kernel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (conv2D.cpp:22) in function 'convolution_kernel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (conv2D.cpp:23) in function 'convolution_kernel' completely with a factor of 3.
+INFO: [XFORM 203-602] Inlining function 'load_input' into 'conv2d' (conv2D.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'write_output' into 'conv2d' (conv2D.cpp:49) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolution_kernel' (conv2D.cpp:15)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 126.832 ; gain = 41.934
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv2D.cpp:18:19) in function 'convolution_kernel'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv2D.cpp:7:19) in function 'conv2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 127.316 ; gain = 42.418
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv2d' ...
+WARNING: [SYN 201-107] Renaming port name 'conv2d/input' to 'conv2d/input_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolution_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_Loop2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('buffer_load_2', conv2D.cpp:24) on array 'buffer_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buffer_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.36 seconds; current allocated memory: 87.647 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.164 seconds; current allocated memory: 88.077 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_Inner_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.216 seconds; current allocated memory: 88.266 MB.
+INFO: [HLS 200-434] Only 1 loops out of a total 3 loops have been pipelined in this design.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.145 seconds; current allocated memory: 88.469 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolution_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolution_kernel'.
+INFO: [HLS 200-111]  Elapsed time: 0.112 seconds; current allocated memory: 89.173 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/result' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv2d' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.369 seconds; current allocated memory: 89.778 MB.
+INFO: [RTMG 210-278] Implementing memory 'conv2d_buffer_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'conv2d_output_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 139.957 ; gain = 55.059
+INFO: [SYSC 207-301] Generating SystemC RTL for conv2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for conv2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv2d.
+INFO: [HLS 200-112] Total elapsed time: 7.485 seconds; peak allocated memory: 89.778 MB.
+==============================================================
+File generated on Wed Dec 18 02:03:08 +0700 2024
+Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
+SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020clg484-1'
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [HLS 200-10] Analyzing design file 'conv2D.cpp' ... 
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 103.109 ; gain = 18.352
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 103.109 ; gain = 18.352
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 104.340 ; gain = 19.582
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'load_input' into 'conv2d' (conv2D.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'write_output' into 'conv2d' (conv2D.cpp:49) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 104.594 ; gain = 19.836
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'Loop2' (conv2D.cpp:19) in function 'convolution_kernel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1' (conv2D.cpp:22) in function 'convolution_kernel' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'Loop-1.1.1.1' (conv2D.cpp:23) in function 'convolution_kernel' completely with a factor of 3.
+INFO: [XFORM 203-602] Inlining function 'load_input' into 'conv2d' (conv2D.cpp:47) automatically.
+INFO: [XFORM 203-602] Inlining function 'write_output' into 'conv2d' (conv2D.cpp:49) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'convolution_kernel' (conv2D.cpp:15)...8 expression(s) balanced.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 127.055 ; gain = 42.297
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv2D.cpp:18:19) in function 'convolution_kernel'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-1' (conv2D.cpp:7:19) in function 'conv2d'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (conv2D.cpp:33:19) in function 'conv2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 127.391 ; gain = 42.633
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'conv2d' ...
+WARNING: [SYN 201-107] Renaming port name 'conv2d/input' to 'conv2d/input_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolution_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_Loop2'.
+WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('buffer_load_2', conv2D.cpp:24) on array 'buffer_r' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'buffer_r'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 9.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 5.444 seconds; current allocated memory: 87.707 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.171 seconds; current allocated memory: 88.121 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L_Inner_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-61] Pipelining loop 'L_W_Inner_Loop'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.29 seconds; current allocated memory: 88.338 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.133 seconds; current allocated memory: 88.563 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolution_kernel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolution_kernel'.
+INFO: [HLS 200-111]  Elapsed time: 0.122 seconds; current allocated memory: 89.267 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'conv2d' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/input_r' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/kernel' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'conv2d/result' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'conv2d' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'conv2d'.
+INFO: [HLS 200-111]  Elapsed time: 0.359 seconds; current allocated memory: 89.947 MB.
+INFO: [RTMG 210-278] Implementing memory 'conv2d_buffer_ram (RAM)' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'conv2d_output_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 141.258 ; gain = 56.500
+INFO: [SYSC 207-301] Generating SystemC RTL for conv2d.
+INFO: [VHDL 208-304] Generating VHDL RTL for conv2d.
+INFO: [VLOG 209-307] Generating Verilog RTL for conv2d.
+INFO: [HLS 200-112] Total elapsed time: 7.654 seconds; peak allocated memory: 89.947 MB.

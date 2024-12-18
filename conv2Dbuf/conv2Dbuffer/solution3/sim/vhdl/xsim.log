@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# xsim v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Dec 18 17:23:16 2024
+# Process ID: 21792
+# Current directory: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl
+# Command line: xsim.exe -mode tcl -source {xsim.dir/convolve_2d/xsim_script.tcl}
+# Log file: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl/xsim.log
+# Journal file: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/convolve_2d/xsim_script.tcl
+# xsim {convolve_2d} -autoloadwcfg -tclbatch {convolve_2d.tcl}
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source convolve_2d.tcl
+## run all
+Note: simulation done!
+Time: 905 ns  Iteration: 1  Process: /apatb_convolve_2d_top/generate_sim_done_proc  File: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl/convolve_2d.autotb.vhd
+Failure: NORMAL EXIT (note: failure is to force the simulator to stop)
+Time: 905 ns  Iteration: 1  Process: /apatb_convolve_2d_top/generate_sim_done_proc  File: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl/convolve_2d.autotb.vhd
+$finish called at time : 905 ns
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Dec 18 17:23:19 2024...

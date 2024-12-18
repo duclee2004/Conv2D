@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="conv2D.cpp" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\update\conv2D.cpp"/>
+    <originFiles name="conv2D.cpp" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\update\conv2D.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="testbench.cpp" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\update\testbench.cpp"/>
+    <originFiles name="testbench.cpp" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\update\testbench.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

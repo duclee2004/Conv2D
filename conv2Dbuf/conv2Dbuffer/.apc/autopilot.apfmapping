@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="convolve_2d.cpp" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\conv2Dbuf\convolve_2d.cpp"/>
+    <originFiles name="convolve_2d.h" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\conv2Dbuf\convolve_2d.h"/>
+  </source>
+  <testbench>
+    <originFiles name="test_convolve_2d.cpp" path="D:\Hoc_tap\Nam3_2024_2025\Ki1\PhanCungChoDL\Conv2D\conv2Dbuf\test_convolve_2d.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

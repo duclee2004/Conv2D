@@ -1,0 +1,9 @@
+sv work "glbl.v"
+sv xil_defaultlib "AESL_axi_s_in_stream_V.v"
+sv xil_defaultlib "AESL_axi_s_out_stream_V.v"
+sv xil_defaultlib "AESL_fifo.v"
+sv xil_defaultlib "convolve.v"
+sv xil_defaultlib "convolve_2d.autotb.v"
+sv xil_defaultlib "convolve_2d.v"
+sv xil_defaultlib "convolve_2d_line_bkb.v"
+

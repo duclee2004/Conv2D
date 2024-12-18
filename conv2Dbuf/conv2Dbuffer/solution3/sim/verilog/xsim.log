@@ -1,0 +1,29 @@
+#-----------------------------------------------------------
+# xsim v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+# Start of session at: Wed Dec 18 17:00:44 2024
+# Process ID: 24760
+# Current directory: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/verilog
+# Command line: xsim.exe -mode tcl -source {xsim.dir/convolve_2d/xsim_script.tcl}
+# Log file: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/verilog/xsim.log
+# Journal file: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/verilog\xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/convolve_2d/xsim_script.tcl
+# xsim {convolve_2d} -autoloadwcfg -tclbatch {convolve_2d.tcl}
+Vivado Simulator 2018.3
+Time resolution is 1 ps
+source convolve_2d.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 1 [0.00%] @ "125000"
+// RTL Simulation : 1 / 1 [100.00%] @ "865000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 905 ns : File "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/verilog/convolve_2d.autotb.v" Line 792
+## quit
+INFO: [Common 17-206] Exiting xsim at Wed Dec 18 17:00:47 2024...

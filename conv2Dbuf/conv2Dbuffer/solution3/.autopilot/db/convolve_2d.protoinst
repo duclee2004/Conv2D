@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"convolve_2d": {
+			"proto_instances": {
+			}
+		}
+	}
+}
