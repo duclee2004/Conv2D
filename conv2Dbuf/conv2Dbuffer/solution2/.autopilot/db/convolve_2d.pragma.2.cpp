@@ -6755,7 +6755,10 @@ inline bool bounds_ok(int y, int x)
 int convolve(int window[3][3], const int kernel[3][3]) {_ssdm_SpecArrayDimSize(window, 3);_ssdm_SpecArrayDimSize(kernel, 3);
     int result = 0;
     convolve_label3:for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
+        convolve_label4:for (int j = 0; j < 3; j++) {
+_ssdm_Unroll(0,0,0, "");
+# 16 "convolve_2d.cpp"
+
             result += window[i][j] * kernel[i][j];
         }
     }
@@ -6775,7 +6778,7 @@ void convolve_2d(
         convolve_2d_label0:for (int j = 0; j < 7; j++)
             line_buf[i][j] = 0;
 
-    for (int y = 0; y < 7; y++) {
+    convolve_2d_label6:for (int y = 0; y < 7; y++) {
         convolve_2d_label1:for (int x = 0; x < 7; x++) {
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 # 37 "convolve_2d.cpp"
@@ -6788,15 +6791,18 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
 # 42 "convolve_2d.cpp"
 
-                for (int j = 0; j < 3 - 1; j++)
+                convolve_2d_label3:for (int j = 0; j < 3 - 1; j++)
                     window[i][j] = window[i][j + 1];
 
-            for (int i = 0; i < 3 - 1; i++)
+            convolve_2d_label4:for (int i = 0; i < 3 - 1; i++)
+_ssdm_Unroll(0,0,0, "");
+# 46 "convolve_2d.cpp"
+
                 window[i][3 - 1] = line_buf[i][x];
 
             window[3 - 1][3 - 1] = val_in;
 
-            for (int i = 0; i < 3 - 1; i++)
+            convolve_2d_label5:for (int i = 0; i < 3 - 1; i++)
                 line_buf[i][x] = (i == 3 - 2) ? val_in : line_buf[i + 1][x];
 
             if (y >= ((3 - 1) / 2) && x >= ((3 - 1) / 2)) {

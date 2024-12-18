@@ -491,7 +491,7 @@ convolve_2d::convolve_2d(sc_module_name name) : sc_module(name), mVcdFile(0) {
     SC_METHOD(thread_tmp_3_cast_fu_361_p1);
     sensitive << ( j_reg_258 );
 
-    SC_METHOD(thread_tmp_6_fu_335_p3);
+    SC_METHOD(thread_tmp_4_fu_335_p3);
     sensitive << ( i_reg_247 );
 
     SC_METHOD(thread_tmp_7_fu_479_p2);
@@ -508,7 +508,7 @@ convolve_2d::convolve_2d(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sensitive << ( x_assign_mid2_fu_423_p3 );
 
     SC_METHOD(thread_tmp_9_fu_343_p2);
-    sensitive << ( tmp_6_fu_335_p3 );
+    sensitive << ( tmp_4_fu_335_p3 );
     sensitive << ( tmp_cast_fu_331_p1 );
 
     SC_METHOD(thread_tmp_cast_fu_331_p1);
@@ -706,7 +706,7 @@ convolve_2d::convolve_2d(sc_module_name name) : sc_module(name), mVcdFile(0) {
     sc_trace(mVcdFile, window_2_0_fu_108, "window_2_0_fu_108");
     sc_trace(mVcdFile, window_1_0_fu_112, "window_1_0_fu_112");
     sc_trace(mVcdFile, window_1_1_fu_116, "window_1_1_fu_116");
-    sc_trace(mVcdFile, tmp_6_fu_335_p3, "tmp_6_fu_335_p3");
+    sc_trace(mVcdFile, tmp_4_fu_335_p3, "tmp_4_fu_335_p3");
     sc_trace(mVcdFile, tmp_cast_fu_331_p1, "tmp_cast_fu_331_p1");
     sc_trace(mVcdFile, tmp_3_cast_fu_361_p1, "tmp_3_cast_fu_361_p1");
     sc_trace(mVcdFile, tmp_2_fu_365_p2, "tmp_2_fu_365_p2");
@@ -1509,8 +1509,8 @@ void convolve_2d::thread_tmp_3_cast_fu_361_p1() {
     tmp_3_cast_fu_361_p1 = esl_zext<5,3>(j_reg_258.read());
 }
 
-void convolve_2d::thread_tmp_6_fu_335_p3() {
-    tmp_6_fu_335_p3 = esl_concat<2,3>(i_reg_247.read(), ap_const_lv3_0);
+void convolve_2d::thread_tmp_4_fu_335_p3() {
+    tmp_4_fu_335_p3 = esl_concat<2,3>(i_reg_247.read(), ap_const_lv3_0);
 }
 
 void convolve_2d::thread_tmp_7_fu_479_p2() {
@@ -1526,7 +1526,7 @@ void convolve_2d::thread_tmp_8_fu_459_p1() {
 }
 
 void convolve_2d::thread_tmp_9_fu_343_p2() {
-    tmp_9_fu_343_p2 = (!tmp_6_fu_335_p3.read().is_01() || !tmp_cast_fu_331_p1.read().is_01())? sc_lv<5>(): (sc_biguint<5>(tmp_6_fu_335_p3.read()) - sc_biguint<5>(tmp_cast_fu_331_p1.read()));
+    tmp_9_fu_343_p2 = (!tmp_4_fu_335_p3.read().is_01() || !tmp_cast_fu_331_p1.read().is_01())? sc_lv<5>(): (sc_biguint<5>(tmp_4_fu_335_p3.read()) - sc_biguint<5>(tmp_cast_fu_331_p1.read()));
 }
 
 void convolve_2d::thread_tmp_cast_fu_331_p1() {

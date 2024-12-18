@@ -51,8 +51,6 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1304311719" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf"/>
-                                    									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/include/etc"/>
@@ -86,8 +84,6 @@
                                 <option id="gnu.c.compiler.exe.debug.option.debugging.level.2144726195" name="Debug Level" superClass="gnu.c.compiler.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1656770870" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
                                     									
@@ -223,8 +219,6 @@
                                 								
                                 <option id="gnu.cpp.compiler.option.include.paths.1985996037" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
-                                    <listOptionValue builtIn="false" value="D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf"/>
-                                    									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/include/etc"/>
@@ -248,8 +242,6 @@
                                 <option id="gnu.c.compiler.exe.release.option.debugging.level.117810127" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
                                 								
                                 <option id="gnu.c.compiler.option.include.paths.1554956222" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
-                                    									
-                                    <listOptionValue builtIn="false" value="D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
                                     									

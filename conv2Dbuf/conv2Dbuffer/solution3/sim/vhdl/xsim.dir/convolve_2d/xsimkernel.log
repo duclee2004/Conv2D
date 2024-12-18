@@ -1,7 +1,7 @@
-Running: xsim.dir/convolve_2d/xsimk.exe -simmode gui -wdb convolve_2d.wdb -simrunnum 0 -socket 63467
+Running: xsim.dir/convolve_2d/xsimk.exe -simmode gui -wdb convolve_2d.wdb -simrunnum 0 -socket 64600
 Design successfully loaded
-Design Loading Memory Usage: 7364 KB (Peak: 7364 KB)
-Design Loading CPU Usage: 0 ms
+Design Loading Memory Usage: 6880 KB (Peak: 6880 KB)
+Design Loading CPU Usage: 15 ms
 Simulation completed
-Simulation Memory Usage: 8160 KB (Peak: 8160 KB)
-Simulation CPU Usage: 0 ms
+Simulation Memory Usage: 7688 KB (Peak: 7688 KB)
+Simulation CPU Usage: 15 ms

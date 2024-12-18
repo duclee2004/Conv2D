@@ -6783,11 +6783,17 @@ void convolve_2d(
 # 27 "convolve_2d.cpp"
 
     int line_buf[3 - 1][7];
+#pragma HLS ARRAY_PARTITION variable=&line_buf complete dim=0
+# 28 "convolve_2d.cpp"
+
 #pragma HLS ARRAY_PARTITION variable=&line_buf complete dim=1
 # 28 "convolve_2d.cpp"
 
     int window[3][3];
 #pragma HLS ARRAY_PARTITION variable=&window complete dim=0
+# 29 "convolve_2d.cpp"
+
+#pragma HLS ARRAY_PARTITION variable=&window complete dim=1
 # 29 "convolve_2d.cpp"
 
     int right[3];
@@ -6816,6 +6822,9 @@ void convolve_2d(
                     window[i][j] = window[i][j + 1];
 
             convolve_2d_label4:for (int i = 0; i < 3 - 1; i++)
+#pragma HLS UNROLL
+# 46 "convolve_2d.cpp"
+
                 window[i][3 - 1] = line_buf[i][x];
 
             window[3 - 1][3 - 1] = val_in;

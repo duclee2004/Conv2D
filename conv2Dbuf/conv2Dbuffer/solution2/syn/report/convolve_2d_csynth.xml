@@ -38,12 +38,12 @@
 <IterationLatency>1</IterationLatency>
 </convolve_2d_label0>
 </Loop1>
-<L_convolve_2d_label1>
+<convolve_2d_label6_convolve_2d_label1>
 <TripCount>49</TripCount>
 <Latency>248</Latency>
 <PipelineII>5</PipelineII>
 <PipelineDepth>9</PipelineDepth>
-</L_convolve_2d_label1>
+</convolve_2d_label6_convolve_2d_label1>
 </SummaryOfLoopLatency>
 </PerformanceEstimates>
 

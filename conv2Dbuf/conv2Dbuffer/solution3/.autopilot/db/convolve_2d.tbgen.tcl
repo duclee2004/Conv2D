@@ -91,7 +91,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "72", "EstimateLatencyMax" : "72",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "71", "EstimateLatencyMax" : "71",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -107,34 +107,32 @@ set RtlHierarchyInfo {[
 					{"Name" : "in_stream_V_TDATA_blk_n", "Type" : "RtlSignal"}]},
 			{"Name" : "kernel_0_0", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_0_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_0_0"}]},
 			{"Name" : "kernel_0_1", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_0_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_0_1"}]},
 			{"Name" : "kernel_0_2", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_0_2"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_0_2"}]},
 			{"Name" : "kernel_1_0", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_1_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_1_0"}]},
 			{"Name" : "kernel_1_1", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_1_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_1_1"}]},
 			{"Name" : "kernel_1_2", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_1_2"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_1_2"}]},
 			{"Name" : "kernel_2_0", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_2_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_2_0"}]},
 			{"Name" : "kernel_2_1", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_2_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_2_1"}]},
 			{"Name" : "kernel_2_2", "Type" : "None", "Direction" : "I",
 				"SubConnect" : [
-					{"ID" : "3", "SubInstance" : "grp_convolve_fu_252", "Port" : "kernel_2_2"}]}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.line_buf_0_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.line_buf_1_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_convolve_fu_252", "Parent" : "0",
+					{"ID" : "1", "SubInstance" : "grp_convolve_fu_511", "Port" : "kernel_2_2"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_convolve_fu_511", "Parent" : "0",
 		"CDFG" : "convolve",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0",
@@ -165,12 +163,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "kernel_1_2", "Type" : "None", "Direction" : "I"},
 			{"Name" : "kernel_2_0", "Type" : "None", "Direction" : "I"},
 			{"Name" : "kernel_2_1", "Type" : "None", "Direction" : "I"},
-			{"Name" : "kernel_2_2", "Type" : "None", "Direction" : "I"}]}]}
+			{"Name" : "kernel_2_2", "Type" : "None", "Direction" : "I"}]},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.convolve_2d_mux_7bkb_U19", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.convolve_2d_mux_7bkb_U20", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	convolve_2d {
-		out_stream_V {Type O LastRead -1 FirstWrite 8}
+		out_stream_V {Type O LastRead -1 FirstWrite 7}
 		in_stream_V {Type I LastRead 3 FirstWrite -1}
 		kernel_0_0 {Type I LastRead 0 FirstWrite -1}
 		kernel_0_1 {Type I LastRead 0 FirstWrite -1}
@@ -204,8 +204,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "72", "Max" : "72"}
-	, {"Name" : "Interval", "Min" : "73", "Max" : "73"}
+	{"Name" : "Latency", "Min" : "71", "Max" : "71"}
+	, {"Name" : "Interval", "Min" : "72", "Max" : "72"}
 ]}
 
 set PipelineEnableSignalInfo {[

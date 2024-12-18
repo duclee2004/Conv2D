@@ -208,7 +208,7 @@ architecture behav of convolve_2d is
     signal window_2_0_fu_108 : STD_LOGIC_VECTOR (31 downto 0);
     signal window_1_0_fu_112 : STD_LOGIC_VECTOR (31 downto 0);
     signal window_1_1_fu_116 : STD_LOGIC_VECTOR (31 downto 0);
-    signal tmp_6_fu_335_p3 : STD_LOGIC_VECTOR (4 downto 0);
+    signal tmp_4_fu_335_p3 : STD_LOGIC_VECTOR (4 downto 0);
     signal tmp_cast_fu_331_p1 : STD_LOGIC_VECTOR (4 downto 0);
     signal tmp_3_cast_fu_361_p1 : STD_LOGIC_VECTOR (4 downto 0);
     signal tmp_2_fu_365_p2 : STD_LOGIC_VECTOR (4 downto 0);
@@ -976,11 +976,11 @@ begin
         tmp_s_fu_437_p2;
     tmp_2_fu_365_p2 <= std_logic_vector(unsigned(tmp_9_reg_646) + unsigned(tmp_3_cast_fu_361_p1));
     tmp_3_cast_fu_361_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(j_reg_258),5));
-    tmp_6_fu_335_p3 <= (i_reg_247 & ap_const_lv3_0);
+    tmp_4_fu_335_p3 <= (i_reg_247 & ap_const_lv3_0);
     tmp_7_fu_479_p2 <= "0" when (x_assign_mid2_fu_423_p3 = ap_const_lv3_0) else "1";
     tmp_8_cast_fu_464_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(x_assign_mid2_fu_423_p3),4));
     tmp_8_fu_459_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(x_assign_mid2_fu_423_p3),64));
-    tmp_9_fu_343_p2 <= std_logic_vector(unsigned(tmp_6_fu_335_p3) - unsigned(tmp_cast_fu_331_p1));
+    tmp_9_fu_343_p2 <= std_logic_vector(unsigned(tmp_4_fu_335_p3) - unsigned(tmp_cast_fu_331_p1));
     tmp_cast_fu_331_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(i_reg_247),5));
     tmp_s_fu_437_p2 <= "0" when (ap_phi_mux_y_assign_phi_fu_284_p4 = ap_const_lv3_0) else "1";
     x_assign_mid2_fu_423_p3 <= 

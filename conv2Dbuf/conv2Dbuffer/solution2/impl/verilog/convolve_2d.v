@@ -187,7 +187,7 @@ wire    ap_block_pp0_stage2;
 reg   [31:0] window_2_0_fu_108;
 reg   [31:0] window_1_0_fu_112;
 reg   [31:0] window_1_1_fu_116;
-wire   [4:0] tmp_6_fu_335_p3;
+wire   [4:0] tmp_4_fu_335_p3;
 wire   [4:0] tmp_cast_fu_331_p1;
 wire   [4:0] tmp_3_cast_fu_361_p1;
 wire   [4:0] tmp_2_fu_365_p2;
@@ -879,7 +879,7 @@ assign tmp_2_fu_365_p2 = (tmp_9_reg_646 + tmp_3_cast_fu_361_p1);
 
 assign tmp_3_cast_fu_361_p1 = j_reg_258;
 
-assign tmp_6_fu_335_p3 = {{i_reg_247}, {3'd0}};
+assign tmp_4_fu_335_p3 = {{i_reg_247}, {3'd0}};
 
 assign tmp_7_fu_479_p2 = ((x_assign_mid2_fu_423_p3 != 3'd0) ? 1'b1 : 1'b0);
 
@@ -887,7 +887,7 @@ assign tmp_8_cast_fu_464_p1 = x_assign_mid2_fu_423_p3;
 
 assign tmp_8_fu_459_p1 = x_assign_mid2_fu_423_p3;
 
-assign tmp_9_fu_343_p2 = (tmp_6_fu_335_p3 - tmp_cast_fu_331_p1);
+assign tmp_9_fu_343_p2 = (tmp_4_fu_335_p3 - tmp_cast_fu_331_p1);
 
 assign tmp_cast_fu_331_p1 = i_reg_247;
 

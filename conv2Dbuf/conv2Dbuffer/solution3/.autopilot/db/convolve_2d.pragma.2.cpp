@@ -6783,11 +6783,17 @@ _ssdm_op_SpecInterface(kernel, "bram", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "
 # 27 "convolve_2d.cpp"
 
     int line_buf[3 - 1][7];
+_ssdm_SpecArrayPartition( line_buf, 0, "COMPLETE", 0, "");
+# 28 "convolve_2d.cpp"
+
 _ssdm_SpecArrayPartition( line_buf, 1, "COMPLETE", 0, "");
 # 28 "convolve_2d.cpp"
 
     int window[3][3];
 _ssdm_SpecArrayPartition( window, 0, "COMPLETE", 0, "");
+# 29 "convolve_2d.cpp"
+
+_ssdm_SpecArrayPartition( window, 1, "COMPLETE", 0, "");
 # 29 "convolve_2d.cpp"
 
     int right[3];
@@ -6816,6 +6822,9 @@ _ssdm_op_SpecPipeline(-1, 1, 1, 0, "");
                     window[i][j] = window[i][j + 1];
 
             convolve_2d_label4:for (int i = 0; i < 3 - 1; i++)
+_ssdm_Unroll(0,0,0, "");
+# 46 "convolve_2d.cpp"
+
                 window[i][3 - 1] = line_buf[i][x];
 
             window[3 - 1][3 - 1] = val_in;

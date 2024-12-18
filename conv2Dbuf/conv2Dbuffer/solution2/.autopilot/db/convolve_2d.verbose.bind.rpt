@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'convolve_2d'
 ================================================================
-* Date:           Wed Dec 18 16:55:02 2024
+* Date:           Wed Dec 18 20:38:47 2024
 
 * Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
 * Project:        conv2Dbuffer
@@ -37,14 +37,14 @@
         N/A
 
         * Loop: 
-        +------------------------+-----+-----+----------+-----------+-----------+------+----------+
-        |                        |  Latency  | Iteration|  Initiation Interval  | Trip |          |
-        |        Loop Name       | min | max |  Latency |  achieved |   target  | Count| Pipelined|
-        +------------------------+-----+-----+----------+-----------+-----------+------+----------+
-        |- Loop 1                |   18|   18|         9|          -|          -|     2|    no    |
-        | + convolve_2d_label0   |    7|    7|         1|          -|          -|     7|    no    |
-        |- L_convolve_2d_label1  |  248|  248|         9|          5|          1|    49|    yes   |
-        +------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        +-----------------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                                         |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |                Loop Name                | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------------------------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1                                 |   18|   18|         9|          -|          -|     2|    no    |
+        | + convolve_2d_label0                    |    7|    7|         1|          -|          -|     7|    no    |
+        |- convolve_2d_label6_convolve_2d_label1  |  248|  248|         9|          5|          1|    49|    yes   |
+        +-----------------------------------------+-----+-----+----------+-----------+-----------+------+----------+
 
 ============================================================
 + Verbose Summary: Synthesis Manager
@@ -136,38 +136,38 @@ ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%i = phi i2 [ 0, %0 ], [ %i_1, %.lo
 ST_2 : Operation 32 [1/1] (0.95ns)   --->   "%exitcond1 = icmp eq i2 %i, -2" [convolve_2d.cpp:32]   --->   Operation 32 'icmp' 'exitcond1' <Predicate = true> <Delay = 0.95> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%empty_5 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 33 'speclooptripcount' 'empty_5' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 34 [1/1] (1.56ns)   --->   "%i_1 = add i2 %i, 1" [convolve_2d.cpp:32]   --->   Operation 34 'add' 'i_1' <Predicate = true> <Delay = 1.56> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader11.preheader, label %.preheader13.preheader" [convolve_2d.cpp:32]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "br i1 %exitcond1, label %.preheader11.preheader.preheader, label %.preheader12.preheader" [convolve_2d.cpp:32]   --->   Operation 35 'br' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_cast = zext i2 %i to i5" [convolve_2d.cpp:32]   --->   Operation 36 'zext' 'tmp_cast' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_6 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %i, i3 0)" [convolve_2d.cpp:32]   --->   Operation 37 'bitconcatenate' 'tmp_6' <Predicate = (!exitcond1)> <Delay = 0.00>
-ST_2 : Operation 38 [1/1] (1.78ns)   --->   "%tmp_9 = sub i5 %tmp_6, %tmp_cast" [convolve_2d.cpp:34]   --->   Operation 38 'sub' 'tmp_9' <Predicate = (!exitcond1)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 39 [1/1] (1.76ns)   --->   "br label %.preheader13" [convolve_2d.cpp:33]   --->   Operation 39 'br' <Predicate = (!exitcond1)> <Delay = 1.76>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%tmp_4 = call i5 @_ssdm_op_BitConcatenate.i5.i2.i3(i2 %i, i3 0)" [convolve_2d.cpp:32]   --->   Operation 37 'bitconcatenate' 'tmp_4' <Predicate = (!exitcond1)> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.78ns)   --->   "%tmp_9 = sub i5 %tmp_4, %tmp_cast" [convolve_2d.cpp:34]   --->   Operation 38 'sub' 'tmp_9' <Predicate = (!exitcond1)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (1.76ns)   --->   "br label %.preheader12" [convolve_2d.cpp:33]   --->   Operation 39 'br' <Predicate = (!exitcond1)> <Delay = 1.76>
 ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%window_2_1 = alloca i32"   --->   Operation 40 'alloca' 'window_2_1' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%window_0_0 = alloca i32"   --->   Operation 41 'alloca' 'window_0_0' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%window_0_1 = alloca i32"   --->   Operation 42 'alloca' 'window_0_1' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%window_2_0 = alloca i32"   --->   Operation 43 'alloca' 'window_2_0' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%window_1_0 = alloca i32"   --->   Operation 44 'alloca' 'window_1_0' <Predicate = (exitcond1)> <Delay = 0.00>
 ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%window_1_1 = alloca i32"   --->   Operation 45 'alloca' 'window_1_1' <Predicate = (exitcond1)> <Delay = 0.00>
-ST_2 : Operation 46 [1/1] (1.76ns)   --->   "br label %.preheader11" [convolve_2d.cpp:36]   --->   Operation 46 'br' <Predicate = (exitcond1)> <Delay = 1.76>
+ST_2 : Operation 46 [1/1] (1.76ns)   --->   "br label %.preheader11.preheader"   --->   Operation 46 'br' <Predicate = (exitcond1)> <Delay = 1.76>
 
 State 3 <SV = 2> <Delay = 4.10>
-ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%j = phi i3 [ %j_1, %1 ], [ 0, %.preheader13.preheader ]"   --->   Operation 47 'phi' 'j' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%j = phi i3 [ %j_1, %1 ], [ 0, %.preheader12.preheader ]"   --->   Operation 47 'phi' 'j' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 48 [1/1] (1.13ns)   --->   "%exitcond9 = icmp eq i3 %j, -1" [convolve_2d.cpp:33]   --->   Operation 48 'icmp' 'exitcond9' <Predicate = true> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%empty_6 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 7, i64 7, i64 7)"   --->   Operation 49 'speclooptripcount' 'empty_6' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 50 [1/1] (1.65ns)   --->   "%j_1 = add i3 %j, 1" [convolve_2d.cpp:33]   --->   Operation 50 'add' 'j_1' <Predicate = true> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 51 [1/1] (0.00ns)   --->   "br i1 %exitcond9, label %.loopexit.loopexit, label %1" [convolve_2d.cpp:33]   --->   Operation 51 'br' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str1) nounwind" [convolve_2d.cpp:34]   --->   Operation 52 'specloopname' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str3) nounwind" [convolve_2d.cpp:34]   --->   Operation 52 'specloopname' <Predicate = (!exitcond9)> <Delay = 0.00>
 ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_3_cast = zext i3 %j to i5" [convolve_2d.cpp:34]   --->   Operation 53 'zext' 'tmp_3_cast' <Predicate = (!exitcond9)> <Delay = 0.00>
 ST_3 : Operation 54 [1/1] (1.78ns)   --->   "%tmp_2 = add i5 %tmp_9, %tmp_3_cast" [convolve_2d.cpp:34]   --->   Operation 54 'add' 'tmp_2' <Predicate = (!exitcond9)> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_11_cast = sext i5 %tmp_2 to i64" [convolve_2d.cpp:34]   --->   Operation 55 'sext' 'tmp_11_cast' <Predicate = (!exitcond9)> <Delay = 0.00>
 ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%line_buf_addr = getelementptr [14 x i32]* %line_buf, i64 0, i64 %tmp_11_cast" [convolve_2d.cpp:34]   --->   Operation 56 'getelementptr' 'line_buf_addr' <Predicate = (!exitcond9)> <Delay = 0.00>
 ST_3 : Operation 57 [1/1] (2.32ns)   --->   "store i32 0, i32* %line_buf_addr, align 4" [convolve_2d.cpp:34]   --->   Operation 57 'store' <Predicate = (!exitcond9)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
-ST_3 : Operation 58 [1/1] (0.00ns)   --->   "br label %.preheader13" [convolve_2d.cpp:33]   --->   Operation 58 'br' <Predicate = (!exitcond9)> <Delay = 0.00>
+ST_3 : Operation 58 [1/1] (0.00ns)   --->   "br label %.preheader12" [convolve_2d.cpp:33]   --->   Operation 58 'br' <Predicate = (!exitcond9)> <Delay = 0.00>
 ST_3 : Operation 59 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 59 'br' <Predicate = (exitcond9)> <Delay = 0.00>
 
 State 4 <SV = 2> <Delay = 6.19>
-ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i6 [ %indvar_flatten_next, %._crit_edge15 ], [ 0, %.preheader11.preheader ]"   --->   Operation 60 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%y_assign = phi i3 [ %y_assign_mid2, %._crit_edge15 ], [ 0, %.preheader11.preheader ]" [convolve_2d.cpp:37]   --->   Operation 61 'phi' 'y_assign' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%x_assign = phi i3 [ %x, %._crit_edge15 ], [ 0, %.preheader11.preheader ]"   --->   Operation 62 'phi' 'x_assign' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "%indvar_flatten = phi i6 [ %indvar_flatten_next, %._crit_edge14 ], [ 0, %.preheader11.preheader.preheader ]"   --->   Operation 60 'phi' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 61 [1/1] (0.00ns)   --->   "%y_assign = phi i3 [ %y_assign_mid2, %._crit_edge14 ], [ 0, %.preheader11.preheader.preheader ]" [convolve_2d.cpp:37]   --->   Operation 61 'phi' 'y_assign' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 62 [1/1] (0.00ns)   --->   "%x_assign = phi i3 [ %x, %._crit_edge14 ], [ 0, %.preheader11.preheader.preheader ]"   --->   Operation 62 'phi' 'x_assign' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 63 [1/1] (0.00ns)   --->   "%window_2_1_load = load i32* %window_2_1"   --->   Operation 63 'load' 'window_2_1_load' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 64 [1/1] (0.00ns)   --->   "%window_0_0_load = load i32* %window_0_0" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 64 'load' 'window_0_0_load' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 65 [1/1] (0.00ns)   --->   "%window_0_1_load_1 = load i32* %window_0_1"   --->   Operation 65 'load' 'window_0_1_load_1' <Predicate = true> <Delay = 0.00>
@@ -180,7 +180,7 @@ ST_4 : Operation 71 [1/1] (1.82ns)   --->   "%indvar_flatten_next = add i6 %indv
 ST_4 : Operation 72 [1/1] (0.00ns)   --->   "store i32 %window_1_1_load_1, i32* %window_1_0"   --->   Operation 72 'store' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 73 [1/1] (0.00ns)   --->   "store i32 %window_2_1_load, i32* %window_2_0"   --->   Operation 73 'store' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 74 [1/1] (0.00ns)   --->   "store i32 %window_0_1_load_1, i32* %window_0_0"   --->   Operation 74 'store' <Predicate = true> <Delay = 0.00>
-ST_4 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %3, label %.preheader12"   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 75 [1/1] (0.00ns)   --->   "br i1 %exitcond_flatten, label %3, label %.preheader11"   --->   Operation 75 'br' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 76 [1/1] (1.65ns)   --->   "%y = add i3 %y_assign, 1" [convolve_2d.cpp:36]   --->   Operation 76 'add' 'y' <Predicate = (!exitcond_flatten)> <Delay = 1.65> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 77 [1/1] (1.13ns)   --->   "%exitcond = icmp eq i3 %x_assign, -1" [convolve_2d.cpp:37]   --->   Operation 77 'icmp' 'exitcond' <Predicate = (!exitcond_flatten)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 78 [1/1] (0.98ns)   --->   "%x_assign_mid2 = select i1 %exitcond, i3 0, i3 %x_assign" [convolve_2d.cpp:37]   --->   Operation 78 'select' 'x_assign_mid2' <Predicate = (!exitcond_flatten)> <Delay = 0.98> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.98> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
@@ -198,7 +198,7 @@ ST_4 : Operation 89 [2/2] (2.32ns)   --->   "%window_0_2 = load i32* %line_buf_a
 ST_4 : Operation 90 [2/2] (2.32ns)   --->   "%window_1_2 = load i32* %line_buf_addr_2, align 4" [convolve_2d.cpp:47]   --->   Operation 90 'load' 'window_1_2' <Predicate = (!exitcond_flatten)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
 ST_4 : Operation 91 [1/1] (1.13ns)   --->   "%tmp_7 = icmp ne i3 %x_assign_mid2, 0" [convolve_2d.cpp:54]   --->   Operation 91 'icmp' 'tmp_7' <Predicate = (!exitcond_flatten)> <Delay = 1.13> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 92 [1/1] (0.99ns) (out node of the LUT)   --->   "%or_cond = and i1 %tmp_1_mid2, %tmp_7" [convolve_2d.cpp:54]   --->   Operation 92 'and' 'or_cond' <Predicate = (!exitcond_flatten)> <Delay = 0.99> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.97> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 93 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %2, label %._crit_edge15" [convolve_2d.cpp:54]   --->   Operation 93 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_4 : Operation 93 [1/1] (0.00ns)   --->   "br i1 %or_cond, label %2, label %._crit_edge14" [convolve_2d.cpp:54]   --->   Operation 93 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
 ST_4 : Operation 94 [2/2] (2.32ns)   --->   "%kernel_load = load i32* %kernel_addr, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 94 'load' 'kernel_load' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
 ST_4 : Operation 95 [2/2] (2.32ns)   --->   "%kernel_load_1 = load i32* %kernel_addr_1, align 4" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 95 'load' 'kernel_load_1' <Predicate = (!exitcond_flatten & or_cond)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 14> <RAM>
 
@@ -260,16 +260,16 @@ ST_11 : Operation 137 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp6
 ST_11 : Operation 138 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%tmp4 = add i32 %tmp6, %tmp5" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 138 'add' 'tmp4' <Predicate = (or_cond)> <Delay = 4.37> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
 
 State 12 <SV = 10> <Delay = 8.00>
-ST_12 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([21 x i8]* @L_convolve_2d_label1)"   --->   Operation 139 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_12 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str2) nounwind" [convolve_2d.cpp:37]   --->   Operation 140 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_12 : Operation 141 [1/1] (0.00ns)   --->   "%tmp_4 = call i32 (...)* @_ssdm_op_SpecRegionBegin([19 x i8]* @p_str2)" [convolve_2d.cpp:37]   --->   Operation 141 'specregionbegin' 'tmp_4' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_12 : Operation 142 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str3) nounwind" [convolve_2d.cpp:38]   --->   Operation 142 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 139 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([38 x i8]* @convolve_2d_label6_c)"   --->   Operation 139 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 140 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecLoopName([19 x i8]* @p_str5) nounwind" [convolve_2d.cpp:37]   --->   Operation 140 'specloopname' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 141 [1/1] (0.00ns)   --->   "%tmp_5 = call i32 (...)* @_ssdm_op_SpecRegionBegin([19 x i8]* @p_str5)" [convolve_2d.cpp:37]   --->   Operation 141 'specregionbegin' 'tmp_5' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 142 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str2) nounwind" [convolve_2d.cpp:38]   --->   Operation 142 'specpipeline' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
 ST_12 : Operation 143 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%tmp1 = add i32 %tmp3, %tmp2" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 143 'add' 'tmp1' <Predicate = (or_cond)> <Delay = 0.00> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
 ST_12 : Operation 144 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%result = add nsw i32 %tmp4, %tmp1" [convolve_2d.cpp:17->convolve_2d.cpp:55]   --->   Operation 144 'add' 'result' <Predicate = (or_cond)> <Delay = 4.37> <Core = "TAddSub">   --->   Core 84 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
 ST_12 : Operation 145 [1/1] (3.63ns)   --->   "call void @_ssdm_op_Write.ap_fifo.volatile.i32P(i32* %out_stream_V, i32 %result)" [convolve_2d.cpp:56]   --->   Operation 145 'write' <Predicate = (or_cond)> <Delay = 3.63> <Core = "FIFO">   --->   Core 32 'FIFO' <Latency = 0> <II = 1> <Delay = 3.63> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 32> <Depth = 0> <FIFO>
-ST_12 : Operation 146 [1/1] (0.00ns)   --->   "br label %._crit_edge15" [convolve_2d.cpp:57]   --->   Operation 146 'br' <Predicate = (or_cond)> <Delay = 0.00>
-ST_12 : Operation 147 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([19 x i8]* @p_str2, i32 %tmp_4)" [convolve_2d.cpp:58]   --->   Operation 147 'specregionend' 'empty_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
-ST_12 : Operation 148 [1/1] (0.00ns)   --->   "br label %.preheader11" [convolve_2d.cpp:37]   --->   Operation 148 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 146 [1/1] (0.00ns)   --->   "br label %._crit_edge14" [convolve_2d.cpp:57]   --->   Operation 146 'br' <Predicate = (or_cond)> <Delay = 0.00>
+ST_12 : Operation 147 [1/1] (0.00ns)   --->   "%empty_8 = call i32 (...)* @_ssdm_op_SpecRegionEnd([19 x i8]* @p_str5, i32 %tmp_5)" [convolve_2d.cpp:58]   --->   Operation 147 'specregionend' 'empty_8' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
+ST_12 : Operation 148 [1/1] (0.00ns)   --->   "br label %.preheader11.preheader"   --->   Operation 148 'br' <Predicate = (!exitcond_flatten)> <Delay = 0.00>
 
 State 13 <SV = 3> <Delay = 0.00>
 ST_13 : Operation 149 [1/1] (0.00ns)   --->   "ret void" [convolve_2d.cpp:60]   --->   Operation 149 'ret' <Predicate = true> <Delay = 0.00>
@@ -318,7 +318,7 @@ empty_5             (speclooptripcount) [ 00000000000000]
 i_1                 (add              ) [ 01110000000000]
 StgValue_35         (br               ) [ 00000000000000]
 tmp_cast            (zext             ) [ 00000000000000]
-tmp_6               (bitconcatenate   ) [ 00000000000000]
+tmp_4               (bitconcatenate   ) [ 00000000000000]
 tmp_9               (sub              ) [ 00010000000000]
 StgValue_39         (br               ) [ 00110000000000]
 window_2_1          (alloca           ) [ 00001111111110]
@@ -411,7 +411,7 @@ tmp6                (add              ) [ 00000000000000]
 tmp4                (add              ) [ 00000001000010]
 StgValue_139        (specloopname     ) [ 00000000000000]
 StgValue_140        (specloopname     ) [ 00000000000000]
-tmp_4               (specregionbegin  ) [ 00000000000000]
+tmp_5               (specregionbegin  ) [ 00000000000000]
 StgValue_142        (specpipeline     ) [ 00000000000000]
 tmp1                (add              ) [ 00000000000000]
 result              (add              ) [ 00000000000000]
@@ -710,7 +710,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 <pin id="63" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str1"/></StgValue>
+<StgValue><ssdm name="p_str3"/></StgValue>
 </bind>
 </comp>
 
@@ -773,7 +773,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 <pin id="77" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="L_convolve_2d_label1"/></StgValue>
+<StgValue><ssdm name="convolve_2d_label6_c"/></StgValue>
 </bind>
 </comp>
 
@@ -782,7 +782,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 <pin id="79" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str2"/></StgValue>
+<StgValue><ssdm name="p_str5"/></StgValue>
 </bind>
 </comp>
 
@@ -818,7 +818,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 <pin id="87" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="p_str3"/></StgValue>
+<StgValue><ssdm name="p_str2"/></StgValue>
 </bind>
 </comp>
 
@@ -1340,7 +1340,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 </bind>
 </comp>
 
-<comp id="335" class="1004" name="tmp_6_fu_335">
+<comp id="335" class="1004" name="tmp_4_fu_335">
 <pin_list>
 <pin id="336" dir="0" index="0" bw="5" slack="0"/>
 <pin id="337" dir="0" index="1" bw="2" slack="0"/>
@@ -1349,7 +1349,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 </pin_list>
 <bind>
 <opcode="bitconcatenate(1004) " fcode="bitconcatenate"/>
-<opset="tmp_6/2 "/>
+<opset="tmp_4/2 "/>
 </bind>
 </comp>
 
@@ -2863,7 +2863,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 		i_1 : 1
 		StgValue_35 : 2
 		tmp_cast : 1
-		tmp_6 : 1
+		tmp_4 : 1
 		tmp_9 : 2
 	State 3
 		exitcond9 : 1
@@ -2978,7 +2978,7 @@ StgValue_149        (ret              ) [ 00000000000000]
 |          |      tmp_8_cast_fu_464     |    0    |    0    |    0    |
 |          |     tmp_10_cast_fu_474     |    0    |    0    |    0    |
 |----------|----------------------------|---------|---------|---------|
-|bitconcatenate|        tmp_6_fu_335        |    0    |    0    |    0    |
+|bitconcatenate|        tmp_4_fu_335        |    0    |    0    |    0    |
 |----------|----------------------------|---------|---------|---------|
 |   sext   |     tmp_11_cast_fu_370     |    0    |    0    |    0    |
 |----------|----------------------------|---------|---------|---------|

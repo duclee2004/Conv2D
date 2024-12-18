@@ -12,6 +12,18 @@
           "label": "convolve_2d_label2",
           "functionLabel": "",
           "pragma": {"name": "PIPELINE"}
+        },
+        {
+          "functionName": "convolve",
+          "label": "convolve_label4",
+          "functionLabel": "",
+          "pragma": {"name": "UNROLL"}
+        },
+        {
+          "functionName": "convolve_2d",
+          "label": "convolve_2d_label4",
+          "functionLabel": "",
+          "pragma": {"name": "UNROLL"}
         }
       ]
     }]}

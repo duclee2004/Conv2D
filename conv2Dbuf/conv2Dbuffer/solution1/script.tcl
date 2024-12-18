@@ -9,10 +9,10 @@ add_files convolve_2d.cpp
 add_files convolve_2d.h
 add_files -tb test_convolve_2d.cpp
 open_solution "solution1"
-set_part {xc7z020clg484-1} -tool vivado
+set_part {xc7z020clg484-1}
 create_clock -period 10 -name default
 source "./conv2Dbuffer/solution1/directives.tcl"
 csim_design
 csynth_design
-cosim_design
+cosim_design -rtl vhdl
 export_design -format ip_catalog

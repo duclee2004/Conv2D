@@ -17,9 +17,8 @@ INFO: [VRFC 10-163] Analyzing VHDL file "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungC
 INFO: [VRFC 10-3107] analyzing entity 'apatb_convolve_2d_top'
 INFO: [VRFC 10-163] Analyzing VHDL file "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl/convolve_2d.vhd" into library xil_defaultlib
 INFO: [VRFC 10-3107] analyzing entity 'convolve_2d'
-INFO: [VRFC 10-163] Analyzing VHDL file "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl/convolve_2d_line_bkb.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'convolve_2d_line_bkb_ram'
-INFO: [VRFC 10-3107] analyzing entity 'convolve_2d_line_bkb'
+INFO: [VRFC 10-163] Analyzing VHDL file "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution3/sim/vhdl/convolve_2d_mux_7bkb.vhd" into library xil_defaultlib
+INFO: [VRFC 10-3107] analyzing entity 'convolve_2d_mux_7bkb'
 Starting static elaboration
 WARNING: [VRFC 10-1303] range is empty (null range) [/wrk/xhdhdnobkup3/mounicav/xsimsource/xsim_HEAD/data/vhdl/src/ieee_2008/numeric_std-body.vhdl:3476]
 Completed static elaboration
@@ -34,9 +33,8 @@ Compiling package ieee.std_logic_unsigned
 Compiling package ieee.numeric_std
 Compiling package ieee.std_logic_textio
 Compiling module work.glbl
-Compiling architecture rtl of entity xil_defaultlib.convolve_2d_line_bkb_ram [\convolve_2d_line_bkb_ram(1,5)\]
-Compiling architecture arch of entity xil_defaultlib.convolve_2d_line_bkb [convolve_2d_line_bkb_default]
 Compiling architecture behav of entity xil_defaultlib.convolve [convolve_default]
+Compiling architecture rtl of entity xil_defaultlib.convolve_2d_mux_7bkb [\convolve_2d_mux_7bkb(id=1,din7_...]
 Compiling architecture behav of entity xil_defaultlib.convolve_2d [convolve_2d_default]
 Compiling architecture behav of entity xil_defaultlib.AESL_axi_s_out_stream_V [aesl_axi_s_out_stream_v_default]
 Compiling architecture behav of entity xil_defaultlib.AESL_axi_s_in_stream_V [aesl_axi_s_in_stream_v_default]

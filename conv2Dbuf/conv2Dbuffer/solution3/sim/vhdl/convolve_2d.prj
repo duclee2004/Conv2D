@@ -5,5 +5,5 @@ vhdl xil_defaultlib "AESL_axi_s_out_stream_V.vhd"
 vhdl xil_defaultlib "convolve.vhd"
 vhdl xil_defaultlib "convolve_2d.autotb.vhd"
 vhdl xil_defaultlib "convolve_2d.vhd"
-vhdl xil_defaultlib "convolve_2d_line_bkb.vhd"
+vhdl xil_defaultlib "convolve_2d_mux_7bkb.vhd"
 

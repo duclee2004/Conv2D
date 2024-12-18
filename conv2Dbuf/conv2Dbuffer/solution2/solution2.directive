@@ -6,6 +6,12 @@
         <directive functionName="convolve_2d" label="convolve_2d_label2" functionLabel="">
             <pragma name="PIPELINE"/>
         </directive>
+        <directive functionName="convolve" label="convolve_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="convolve_2d" label="convolve_2d_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

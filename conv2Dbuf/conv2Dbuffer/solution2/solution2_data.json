@@ -15,11 +15,15 @@
   "HlsSolution": {
     "DirectiveTcl": [
       "set_directive_pipeline convolve_2d\/convolve_2d_label1 ",
-      "set_directive_pipeline convolve_2d\/convolve_2d_label2 "
+      "set_directive_pipeline convolve_2d\/convolve_2d_label2 ",
+      "set_directive_unroll convolve\/convolve_label4 ",
+      "set_directive_unroll convolve_2d\/convolve_2d_label4 "
     ],
     "DirectiveInfo": [
       "pipeline convolve_2d\/convolve_2d_label1 {} {}",
-      "pipeline convolve_2d\/convolve_2d_label2 {} {}"
+      "pipeline convolve_2d\/convolve_2d_label2 {} {}",
+      "unroll convolve\/convolve_label4 {} {}",
+      "unroll convolve_2d\/convolve_2d_label4 {} {}"
     ]
   },
   "ClockInfo": {
@@ -283,7 +287,7 @@
               }]
           },
           {
-            "Name": "L_convolve_2d_label1",
+            "Name": "convolve_2d_label6_convolve_2d_label1",
             "TripCount": "49",
             "Latency": "248",
             "PipelineII": "5",
@@ -308,7 +312,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2024-12-18 16:55:03 +0700",
+    "Time": "2024-12-18 20:38:48 +0700",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.3"
   }

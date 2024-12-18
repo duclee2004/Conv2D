@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Wed Dec 18 17:23:06 +0700 2024
+// File generated on Wed Dec 18 20:25:01 +0700 2024
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -70985,7 +70985,7 @@ void convolve_2d(
         convolve_2d_label0:for (int j = 0; j < 7; j++)
             line_buf[i][j] = 0;
 
-    for (int y = 0; y < 7; y++) {
+    convolve_2d_label6:for (int y = 0; y < 7; y++) {
         convolve_2d_label1:for (int x = 0; x < 7; x++) {
             int val_in = 0;
             if (bounds_ok(y, x))
@@ -70995,12 +70995,12 @@ void convolve_2d(
                 convolve_2d_label3:for (int j = 0; j < 3 - 1; j++)
                     window[i][j] = window[i][j + 1];
 
-            for (int i = 0; i < 3 - 1; i++)
+            convolve_2d_label4:for (int i = 0; i < 3 - 1; i++)
                 window[i][3 - 1] = line_buf[i][x];
 
             window[3 - 1][3 - 1] = val_in;
 
-            for (int i = 0; i < 3 - 1; i++)
+            convolve_2d_label5:for (int i = 0; i < 3 - 1; i++)
                 line_buf[i][x] = (i == 3 - 2) ? val_in : line_buf[i + 1][x];
 
             if (y >= ((3 - 1) / 2) && x >= ((3 - 1) / 2)) {

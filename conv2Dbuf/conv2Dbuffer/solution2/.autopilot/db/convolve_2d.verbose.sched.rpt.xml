@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'convolve_2d'" level="0">
-<item name = "Date">Wed Dec 18 16:55:02 2024
+<item name = "Date">Wed Dec 18 20:38:47 2024
 </item>
 <item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
 <item name = "Project">conv2Dbuffer</item>
@@ -37,7 +37,7 @@
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- Loop 1">18, 18, 9, -, -, 2, no</column>
 <column name=" + convolve_2d_label0">7, 7, 1, -, -, 7, no</column>
-<column name="- L_convolve_2d_label1">248, 248, 9, 5, 1, 49, yes</column>
+<column name="- convolve_2d_label6_convolve_2d_label1">248, 248, 9, 5, 1, 49, yes</column>
 </table>
 </item>
 </section>

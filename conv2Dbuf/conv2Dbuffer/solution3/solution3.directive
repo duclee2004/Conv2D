@@ -56,7 +56,24 @@
                 <option name="dim" value="0"/>
             </pragma>
         </directive>
+        <directive functionName="convolve_2d" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="window" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="1"/>
+            </pragma>
+        </directive>
+        <directive functionName="convolve_2d" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="variable" value="line_buf" positionalBoolean="4"/>
+                <option name="complete" value="" positionalBoolean="type"/>
+                <option name="dim" value="0"/>
+            </pragma>
+        </directive>
         <directive functionName="convolve" label="convolve_label4" functionLabel="">
+            <pragma name="UNROLL"/>
+        </directive>
+        <directive functionName="convolve_2d" label="convolve_2d_label4" functionLabel="">
             <pragma name="UNROLL"/>
         </directive>
     </sourceFile>

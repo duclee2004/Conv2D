@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../convolve_2d.cpp in debug mode
+   Generating csim.exe
+0 0 0 0 0 0 0 
+0 -37 -82 -55 74 82 -4 
+0 -37 -84 -88 -119 111 185 
+0 -35 -14 -2 -300 -87 366 
+0 0 43 -37 -474 -87 483 
+0 -40 43 10 -283 -67 292 
+0 -40 -46 10 -91 37 124 
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

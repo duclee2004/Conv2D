@@ -70978,7 +70978,7 @@ void convolve_2d(
         convolve_2d_label0:for (int j = 0; j < 7; j++)
             line_buf[i][j] = 0;
 #pragma empty_line
-    for (int y = 0; y < 7; y++) {
+    convolve_2d_label6:for (int y = 0; y < 7; y++) {
         convolve_2d_label1:for (int x = 0; x < 7; x++) {
             int val_in = 0;
             if (bounds_ok(y, x))
@@ -70988,12 +70988,12 @@ void convolve_2d(
                 convolve_2d_label3:for (int j = 0; j < 3 - 1; j++)
                     window[i][j] = window[i][j + 1];
 #pragma empty_line
-            for (int i = 0; i < 3 - 1; i++)
+            convolve_2d_label4:for (int i = 0; i < 3 - 1; i++)
                 window[i][3 - 1] = line_buf[i][x];
 #pragma empty_line
             window[3 - 1][3 - 1] = val_in;
 #pragma empty_line
-            for (int i = 0; i < 3 - 1; i++)
+            convolve_2d_label5:for (int i = 0; i < 3 - 1; i++)
                 line_buf[i][x] = (i == 3 - 2) ? val_in : line_buf[i + 1][x];
 #pragma empty_line
             if (y >= ((3 - 1) / 2) && x >= ((3 - 1) / 2)) {

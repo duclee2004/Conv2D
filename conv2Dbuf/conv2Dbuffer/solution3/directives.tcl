@@ -12,4 +12,7 @@ set_directive_interface -mode axis -register -register_mode both "convolve_2d" o
 set_directive_pipeline "convolve_2d/convolve_2d_label0"
 set_directive_pipeline "convolve_2d/convolve_2d_label1"
 set_directive_array_partition -type complete -dim 0 "convolve_2d" kernel
+set_directive_array_partition -type complete -dim 1 "convolve_2d" window
+set_directive_array_partition -type complete -dim 0 "convolve_2d" line_buf
 set_directive_unroll "convolve/convolve_label4"
+set_directive_unroll "convolve_2d/convolve_2d_label4"

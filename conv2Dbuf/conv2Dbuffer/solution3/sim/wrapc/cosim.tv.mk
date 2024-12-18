@@ -1,5 +1,5 @@
 # ==============================================================
-# File generated on Wed Dec 18 17:23:07 +0700 2024
+# File generated on Wed Dec 18 20:25:03 +0700 2024
 # Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -49,7 +49,6 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 IFLAG += -D__DSP48E1__
 IFLAG += -DNT
-IFLAG += -Wno-unknown-pragmas
 LFLAG += -L "${AUTOPILOT_ROOT}/${AUTOPILOT_MACH}/tools/systemc/lib" -lsystemc -lpthread
 IFLAG += -D__RTL_SIMULATION__
 IFLAG += -D__xilinx_ip_top=

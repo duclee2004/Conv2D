@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2 opened at Wed Dec 18 16:54:56 +0700 2024
+INFO-FLOW: Workspace D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2 opened at Wed Dec 18 20:38:40 +0700 2024
 Execute     config_clock -quiet -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     open_platform DefaultPlatform 
@@ -77,7 +77,7 @@ Execute       get_default_platform
 Execute     get_default_platform 
 Execute     config_chip_info -quiet -resource  {SLICE 13300}  {LUT 53200}     {FF 106400} {DSP48E 220}   {BRAM 280}  
 Execute     config_chip_info -quiet -speed slow 
-Command   open_solution done; 0.223 sec.
+Command   open_solution done; 0.226 sec.
 Execute   set_part xc7z020clg484-1 -tool vivado 
 Execute     add_library xilinx/zynq/zynq:xc7z020:clg484:-1 
 Execute       get_default_platform 
@@ -96,6 +96,15 @@ INFO-FLOW: Setting directive 'PIPELINE'
 Execute     set_directive_pipeline convolve_2d/convolve_2d_label2 
 INFO-FLOW: Setting directive 'PIPELINE' 
 INFO-FLOW: Setting directive 'PIPELINE' 
+Execute     set_directive_unroll convolve/convolve_label4 
+INFO-FLOW: Setting directive 'PIPELINE' 
+INFO-FLOW: Setting directive 'PIPELINE' 
+INFO-FLOW: Setting directive 'UNROLL' 
+Execute     set_directive_unroll convolve_2d/convolve_2d_label4 
+INFO-FLOW: Setting directive 'PIPELINE' 
+INFO-FLOW: Setting directive 'PIPELINE' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
 Execute   csynth_design 
 Execute     get_config_compile -effort 
 Execute     get_config_compile -enable_clang39 
@@ -123,61 +132,65 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/Xilinx/Vivado/2018.3/msys" -hls  -fno-exceptions  -D__llvm__  -E "convolve_2d.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "D:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp" 
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Xilinx/Vivado/2018.3/msys -hls -fno-exceptions -D__llvm__ -E convolve_2d.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Xilinx/Vivado/2018.3/common/technology/autopilot -I D:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp
-Command       clang done; 0.388 sec.
+Command       clang done; 0.448 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.184 sec.
+Command       tidy_31 done; 0.2 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/Xilinx/Vivado/2018.3/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "D:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp"  -o "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/useless.bc"  
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Xilinx/Vivado/2018.3/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Xilinx/Vivado/2018.3/common/technology/autopilot -I D:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/useless.bc
-Command       clang done; 0.505 sec.
-INFO-FLOW: Done: GCC PP time: 1.1 seconds per iteration
+Command       clang done; 0.603 sec.
+INFO-FLOW: Done: GCC PP time: 1.3 seconds per iteration
 INFO-FLOW: Setting directive 'PIPELINE' 
 INFO-FLOW: Setting directive 'PIPELINE' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
 INFO-FLOW: Setting directive 'PIPELINE' 
 INFO-FLOW: Setting directive 'PIPELINE' 
+INFO-FLOW: Setting directive 'UNROLL' 
+INFO-FLOW: Setting directive 'UNROLL' 
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp std=gnu++98 -directive=D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/.systemc_flag -quiet -fix-errors D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.16 sec.
+Command       tidy_31 done; 0.159 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp std=gnu++98 -directive=D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/all.directive.json 
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/all.directive.json -quiet -fix-errors D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.411 sec.
+Command       tidy_31 done; 0.48 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/xilinx-dataflow-lawyer.convolve_2d.pp.0.cpp.diag.yml D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/xilinx-dataflow-lawyer.convolve_2d.pp.0.cpp.out.log 2> D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/xilinx-dataflow-lawyer.convolve_2d.pp.0.cpp.err.log 
-Command       ap_eval done; 0.161 sec.
+Command       ap_eval done; 0.271 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/tidy-3.1.convolve_2d.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/tidy-3.1.convolve_2d.pp.0.cpp.out.log 2> D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/tidy-3.1.convolve_2d.pp.0.cpp.err.log 
-Command         ap_eval done; 0.489 sec.
+Command         ap_eval done; 0.501 sec.
 Execute         ap_eval exec -ignorestderr D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/xilinx-legacy-rewriter.convolve_2d.pp.0.cpp.out.log 2> D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/xilinx-legacy-rewriter.convolve_2d.pp.0.cpp.err.log 
-Command         ap_eval done; 0.149 sec.
-Command       tidy_31 done; 0.651 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.2 seconds per iteration
+Command         ap_eval done; 0.16 sec.
+Command       tidy_31 done; 0.677 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.4 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.215 sec.
+Command       tidy_31 done; 0.212 sec.
 Execute       get_default_platform 
 INFO-FLOW: Processing labels
 Execute       clang -src D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/Xilinx/Vivado/2018.3/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Xilinx/Vivado/2018.3/common/technology/autopilot" -I "D:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.bc" 
 INFO-FLOW: exec D:/Xilinx/Vivado/2018.3/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Xilinx/Vivado/2018.3/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Xilinx/Vivado/2018.3/common/technology/autopilot -I D:/Xilinx/Vivado/2018.3/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.bc
-Command       clang done; 0.571 sec.
+Command       clang done; 0.541 sec.
 INFO-FLOW: Linking Debug ...
 Execute       llvm-ld D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.g.bc -hls-opt -except-internalize convolve_2d -LD:/Xilinx/Vivado/2018.3/win64/lib -lhlsm -lhlsmc++ -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g 
-Command       llvm-ld done; 0.563 sec.
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.941 ; gain = 17.805
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:04 . Memory (MB): peak = 102.941 ; gain = 17.805
+Command       llvm-ld done; 0.899 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 102.875 ; gain = 18.176
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 102.875 ; gain = 18.176
 Execute       get_config_sdx -target 
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 Execute         transform -promote-dbg-pointer D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.pp.bc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.pp.0.bc -f 
 Execute         llvm-ld D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.pp.0.bc -disable-opt -LD:/Xilinx/Vivado/2018.3/win64/lib -lfloatconversion -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.0 
-Command         llvm-ld done; 0.223 sec.
+Command         llvm-ld done; 0.2 sec.
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -lower-blackbox -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top convolve_2d -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.0.bc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.1.bc -f -phase std-opt 
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 104.723 ; gain = 19.586
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 104.625 ; gain = 19.926
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.1.bc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.2.prechk.bc -f 
@@ -185,7 +198,7 @@ INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve
 INFO: [XFORM 203-602] Inlining function 'convolve' into 'convolve_2d' (convolve_2d.cpp:55) automatically.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.2.prechk.bc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 105.047 ; gain = 19.910
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 104.945 ; gain = 20.246
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.g.1.bc to D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -194,11 +207,11 @@ INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'convolve_2d_label1' (
 WARNING: [XFORM 203-505] Ignored pipeline directive for loop 'convolve_2d_label2' (convolve_2d.cpp:43) because its parent loop or function is pipelined.
 INFO: [XFORM 203-502] Unrolling all loops for pipelining in function 'convolve' (convolve_2d.cpp:13).
 INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label2' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 3.
-INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.1.1' (convolve_2d.cpp:43) in function 'convolve_2d' completely with a factor of 2.
-INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.2' (convolve_2d.cpp:46) in function 'convolve_2d' completely with a factor of 2.
-INFO: [HLS 200-489] Unrolling loop 'Loop-2.1.3' (convolve_2d.cpp:51) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label3' (convolve_2d.cpp:44) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label4' (convolve_2d.cpp:47) in function 'convolve_2d' completely with a factor of 2.
+INFO: [HLS 200-489] Unrolling loop 'convolve_2d_label5' (convolve_2d.cpp:52) in function 'convolve_2d' completely with a factor of 2.
 INFO: [HLS 200-489] Unrolling loop 'convolve_label3' (convolve_2d.cpp:15) in function 'convolve' completely with a factor of 3.
-INFO: [HLS 200-489] Unrolling loop 'Loop-1.1' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
+INFO: [HLS 200-489] Unrolling loop 'convolve_label4' (convolve_2d.cpp:16) in function 'convolve' completely with a factor of 3.
 INFO: [XFORM 203-102] Partitioning array 'window.0' automatically.
 INFO: [XFORM 203-102] Partitioning array 'window.1' automatically.
 INFO: [XFORM 203-102] Partitioning array 'window.2' automatically.
@@ -208,18 +221,18 @@ INFO: [XFORM 203-102] Partitioning array 'window.1' (convolve_2d.cpp:29) automat
 INFO: [XFORM 203-102] Partitioning array 'window.2' (convolve_2d.cpp:29) automatically.
 INFO: [XFORM 203-602] Inlining function 'bounds_ok' into 'convolve_2d' (convolve_2d.cpp:39) automatically.
 INFO: [XFORM 203-602] Inlining function 'convolve' into 'convolve_2d' (convolve_2d.cpp:55) automatically.
-Command         transform done; 0.579 sec.
+Command         transform done; 0.591 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.o.1.tmp.bc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.o.2.bc -f -phase presyn 
 INFO: [XFORM 203-11] Balancing expressions in function 'convolve_2d' (convolve_2d.cpp:24)...8 expression(s) balanced.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 127.109 ; gain = 41.973
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 126.348 ; gain = 41.648
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -instcombine -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -bitwidth -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -cdfg-build D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.o.2.bc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [XFORM 203-541] Flattening a loop nest 'Loop-2' (convolve_2d.cpp:36:19) in function 'convolve_2d'.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 127.109 ; gain = 41.973
+INFO: [XFORM 203-541] Flattening a loop nest 'convolve_2d_label6' (convolve_2d.cpp:36:53) in function 'convolve_2d'.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 126.352 ; gain = 41.652
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 1.093 sec.
-Command     elaborate done; 5.005 sec.
+Command       opt_and_import_c done; 1.144 sec.
+Command     elaborate done; 5.749 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -244,12 +257,12 @@ INFO: [HLS 200-10] -------------------------------------------------------------
 Execute       set_default_model convolve_2d 
 Execute       schedule -model convolve_2d 
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'L_convolve_2d_label1'.
+INFO: [SCHED 204-61] Pipelining loop 'convolve_2d_label6_convolve_2d_label1'.
 WARNING: [SCHED 204-69] Unable to schedule 'load' operation ('kernel_load_2', convolve_2d.cpp:17->convolve_2d.cpp:55) on array 'kernel' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'kernel'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 5, Depth = 9.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.21 sec.
-INFO: [HLS 200-111]  Elapsed time: 5.979 seconds; current allocated memory: 78.256 MB.
+Command       schedule done; 0.214 sec.
+INFO: [HLS 200-111]  Elapsed time: 6.793 seconds; current allocated memory: 78.285 MB.
 Execute       report -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.verbose.sched.rpt -verbose -f 
 INFO: [HLS 200-434] Only 1 loops out of a total 3 loops have been pipelined in this design.
 Execute       db_write -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.sched.adb -f 
@@ -264,7 +277,8 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.179 seconds; current allocated memory: 78.757 MB.
+Command       bind done; 0.109 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.183 seconds; current allocated memory: 78.786 MB.
 Execute       report -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.verbose.bind.rpt -verbose -f 
 Execute       db_write -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.bind.adb -f 
 INFO-FLOW: Finish binding convolve_2d.
@@ -284,8 +298,8 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'convolve_2d/kernel' to 'ap
 INFO: [RTGEN 206-500] Setting interface mode on function 'convolve_2d' to 'ap_ctrl_hs'.
 INFO: [SYN 201-210] Renamed object name 'convolve_2d_line_buf' to 'convolve_2d_line_bkb' due to the length limit 20
 INFO: [RTGEN 206-100] Finished creating RTL model for 'convolve_2d'.
-Command       create_rtl_model done; 0.163 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.3 seconds; current allocated memory: 79.598 MB.
+Command       create_rtl_model done; 0.181 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.321 seconds; current allocated memory: 79.628 MB.
 Execute       source D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/convolve_2d.rtl_wrap.cfg.tcl 
 Execute       gen_rtl convolve_2d -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/syn/systemc/convolve_2d -synmodules convolve_2d 
 Execute       gen_rtl convolve_2d -istop -style xilinx -f -lang vhdl -o D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/syn/vhdl/convolve_2d 
@@ -418,13 +432,13 @@ Execute       get_config_sdx -profile
 Execute       ::config_rtl 
 INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist: D:/Hoc_tap/Nam3_2024_2025/Ki1/PhanCungChoDL/Conv2D/conv2Dbuf/conv2Dbuffer/solution2/.autopilot/db/kernel.internal.xml
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 130.305 ; gain = 45.168
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 130.656 ; gain = 45.957
 INFO: [SYSC 207-301] Generating SystemC RTL for convolve_2d.
 INFO: [VHDL 208-304] Generating VHDL RTL for convolve_2d.
 INFO: [VLOG 209-307] Generating Verilog RTL for convolve_2d.
-Command     autosyn done; 1.988 sec.
+Command     autosyn done; 1.956 sec.
 Execute     get_part 
 Execute     get_config_export -sdx_tcl 
-Command   csynth_design done; 7.002 sec.
-Command ap_source done; 7.308 sec.
+Command   csynth_design done; 7.714 sec.
+Command ap_source done; 8.088 sec.
 Execute cleanup_all 

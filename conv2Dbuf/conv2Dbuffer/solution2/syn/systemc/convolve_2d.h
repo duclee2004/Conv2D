@@ -166,7 +166,7 @@ struct convolve_2d : public sc_module {
     sc_signal< sc_lv<32> > window_2_0_fu_108;
     sc_signal< sc_lv<32> > window_1_0_fu_112;
     sc_signal< sc_lv<32> > window_1_1_fu_116;
-    sc_signal< sc_lv<5> > tmp_6_fu_335_p3;
+    sc_signal< sc_lv<5> > tmp_4_fu_335_p3;
     sc_signal< sc_lv<5> > tmp_cast_fu_331_p1;
     sc_signal< sc_lv<5> > tmp_3_cast_fu_361_p1;
     sc_signal< sc_lv<5> > tmp_2_fu_365_p2;
@@ -327,7 +327,7 @@ struct convolve_2d : public sc_module {
     void thread_tmp_1_mid2_fu_443_p3();
     void thread_tmp_2_fu_365_p2();
     void thread_tmp_3_cast_fu_361_p1();
-    void thread_tmp_6_fu_335_p3();
+    void thread_tmp_4_fu_335_p3();
     void thread_tmp_7_fu_479_p2();
     void thread_tmp_8_cast_fu_464_p1();
     void thread_tmp_8_fu_459_p1();

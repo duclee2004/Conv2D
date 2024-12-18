@@ -13,6 +13,15 @@
     "Speed": "-1"
   },
   "HlsSolution": {
+    "Config": [
+      "config_compile -no_signed_zeros=0",
+      "config_compile -unsafe_math_optimizations=0",
+      "config_dataflow -default_channel=fifo",
+      "config_dataflow -fifo_depth=2",
+      "config_dataflow -scalar_fifo_depth=2",
+      "config_dataflow -start_fifo_depth=2",
+      "config_dataflow -strict_mode=warning"
+    ],
     "DirectiveTcl": [
       "set_directive_array_partition convolve_2d ",
       "set_directive_array_partition convolve_2d ",
@@ -23,7 +32,10 @@
       "set_directive_pipeline convolve_2d\/convolve_2d_label0 ",
       "set_directive_pipeline convolve_2d\/convolve_2d_label1 ",
       "set_directive_array_partition convolve_2d ",
-      "set_directive_unroll convolve\/convolve_label4 "
+      "set_directive_array_partition convolve_2d ",
+      "set_directive_array_partition convolve_2d ",
+      "set_directive_unroll convolve\/convolve_label4 ",
+      "set_directive_unroll convolve_2d\/convolve_2d_label4 "
     ],
     "DirectiveInfo": [
       "array_partition convolve_2d {{partition positionBooleanCmd} {variable positionBooleanTextRequiredwindow} {complete positionBoolean0type} {dim 0}} {}",
@@ -35,7 +47,10 @@
       "pipeline convolve_2d\/convolve_2d_label0 {} {}",
       "pipeline convolve_2d\/convolve_2d_label1 {} {}",
       "array_partition convolve_2d {{partition positionBooleanCmd} {variable positionBooleanTextRequiredkernel} {complete positionBoolean0type} {dim 0}} {}",
-      "unroll convolve\/convolve_label4 {} {}"
+      "array_partition convolve_2d {{partition positionBooleanCmd} {variable positionBooleanTextRequiredwindow} {complete positionBoolean0type} {dim 1}} {}",
+      "array_partition convolve_2d {{partition positionBooleanCmd} {variable positionBooleanTextRequiredline_buf} {complete positionBoolean0type} {dim 0}} {}",
+      "unroll convolve\/convolve_label4 {} {}",
+      "unroll convolve_2d\/convolve_2d_label4 {} {}"
     ]
   },
   "ClockInfo": {
@@ -43,7 +58,7 @@
     "ClockPeriod": "10",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "72",
+    "Latency": "71",
     "Uncertainty": "1.25"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
@@ -62,12 +77,12 @@
     "CSource": ["..\/..\/convolve_2d.cpp"],
     "Vhdl": [
       "impl\/vhdl\/convolve.vhd",
-      "impl\/vhdl\/convolve_2d_line_bkb.vhd",
+      "impl\/vhdl\/convolve_2d_mux_7bkb.vhd",
       "impl\/vhdl\/convolve_2d.vhd"
     ],
     "Verilog": [
       "impl\/verilog\/convolve.v",
-      "impl\/verilog\/convolve_2d_line_bkb.v",
+      "impl\/verilog\/convolve_2d_mux_7bkb.v",
       "impl\/verilog\/convolve_2d.v"
     ],
     "Misc": ["impl\/misc\/logo.png"],
@@ -306,7 +321,7 @@
     "out_stream_V": {
       "interfaceRef": "out_stream_V",
       "dir": "out",
-      "firstOutLatency": "8"
+      "firstOutLatency": "7"
     },
     "in_stream_V": {
       "interfaceRef": "in_stream_V",
@@ -372,7 +387,7 @@
       "ModuleName": "convolve_2d",
       "Instances": [{
           "ModuleName": "convolve",
-          "InstanceName": "grp_convolve_fu_252"
+          "InstanceName": "grp_convolve_fu_511"
         }]
     },
     "Metrics": {
@@ -399,10 +414,10 @@
       },
       "convolve_2d": {
         "Latency": {
-          "LatencyBest": "72",
-          "LatencyAvg": "72",
-          "LatencyWorst": "72",
-          "PipelineII": "73",
+          "LatencyBest": "71",
+          "LatencyAvg": "71",
+          "LatencyWorst": "71",
+          "PipelineII": "72",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -422,16 +437,16 @@
           {
             "Name": "convolve_2d_label6_convolve_2d_label1",
             "TripCount": "49",
-            "Latency": "54",
+            "Latency": "53",
             "PipelineII": "1",
-            "PipelineDepth": "7"
+            "PipelineDepth": "6"
           }
         ],
         "Area": {
-          "BRAM_18K": "4",
+          "BRAM_18K": "0",
           "DSP48E": "27",
-          "FF": "1778",
-          "LUT": "914"
+          "FF": "2602",
+          "LUT": "3808"
         }
       }
     }
@@ -446,7 +461,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2024-12-18 17:51:45 +0700",
+    "Time": "2024-12-18 20:43:11 +0700",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.3"
   }
