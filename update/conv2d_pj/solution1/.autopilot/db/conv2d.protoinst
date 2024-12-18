@@ -1,9 +1,0 @@
-{
-	"version": "1.0",
-	"modules": {
-		"conv2d": {
-			"proto_instances": {
-			}
-		}
-	}
-}

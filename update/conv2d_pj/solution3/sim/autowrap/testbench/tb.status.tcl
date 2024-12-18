@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName conv2D.cpp_pre.cpp.tb.cpp

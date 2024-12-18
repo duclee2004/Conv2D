@@ -1,4 +1,0 @@
-conv2d_buffer
-conv2d_output
-convolution_kernel
-conv2d
